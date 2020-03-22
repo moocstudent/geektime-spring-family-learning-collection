@@ -1,6 +1,7 @@
 package com.example.programmatictransactiondemo.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,7 @@ public class FooServiceImpl implements FooService{
      */
     @Override
     //如果使用这个注解将会起效
-    //@Transactional(rollbackFor = SQLTransactionRollbackException.class)
+//    @Transactional(rollbackFor = SQLTransactionRollbackException.class)
     public void invokeInsertThenRollback() throws SQLTransactionRollbackException {
         log.info("invokeInsertThenRollback 'BBB'");
         insertThenRollback();

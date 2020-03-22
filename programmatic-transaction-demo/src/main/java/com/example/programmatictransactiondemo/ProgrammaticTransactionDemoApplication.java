@@ -1,5 +1,6 @@
 package com.example.programmatictransactiondemo;
 
+import com.example.programmatictransactiondemo.service.FooService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -9,6 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
+
+import java.sql.SQLTransactionRollbackException;
 
 /**
  * 一致的事务模型
@@ -71,13 +74,15 @@ import org.springframework.transaction.support.TransactionTemplate;
  * -怎么判断回滚
  *
  */
-@SpringBootApplication
+@SpringBootApplication(proxyBeanMethods=false)
 @Slf4j
 public class ProgrammaticTransactionDemoApplication implements CommandLineRunner {
     @Autowired
     private TransactionTemplate transactionTemplate;
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private FooService fooService;
 
     public static void main(String[] args) {
         SpringApplication.run(ProgrammaticTransactionDemoApplication.class, args);
@@ -104,4 +109,5 @@ public class ProgrammaticTransactionDemoApplication implements CommandLineRunner
         return (long) jdbcTemplate.queryForList("SELECT COUNT(*) AS CNT FROM FOO")
                 .get(0).get("CNT");
     }
+
 }
