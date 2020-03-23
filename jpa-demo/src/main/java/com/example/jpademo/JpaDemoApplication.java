@@ -34,12 +34,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Spring Data Redis
  *
  * 常用JPA注解
+ * 实体
+ * @Entity,@MappedSuperclass
+ * @Table(name)
+ * 主键
+ * @Id
+ * - @GeneratedValue(strategy,generator)
+ * - @SequenceGenerator(name,sequenceName)
+ *
  * 映射
- * @Column(name,,nullable,length,insertable,updatable)
+ * @Column(name,nullable,length,insertable,updatable)
  * @JoinTable(name),@JoinColumn(name)
  * 关系
  * @OneToOne, @OneToMany, @ManyToOne, @ManyToMany
  * @OrderBy
+ *
+ *
  *
  *
  */
