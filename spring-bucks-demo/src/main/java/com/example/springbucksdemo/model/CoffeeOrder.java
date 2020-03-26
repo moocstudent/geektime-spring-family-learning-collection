@@ -1,7 +1,6 @@
 package com.example.springbucksdemo.model;
 
-import lombok.Builder;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,8 +12,11 @@ import java.util.List;
  * 如声明一个实体类 CoffeeOrder，它将映射到数据库中的 @Table指定的名称表上 T_ORDER
  */
 @Entity
+@Data
 @Builder
 @ToString(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="T_ORDER")
 public class CoffeeOrder extends BaseEntity implements Serializable {
 
@@ -29,43 +31,4 @@ public class CoffeeOrder extends BaseEntity implements Serializable {
     @Column(nullable = false)
     private OrderState state;
 
-    public CoffeeOrder(Long id, Date createTime, Date updateTime, String customer, List<Coffee> items, OrderState state) {
-        super(id, createTime, updateTime);
-        this.customer = customer;
-        this.items = items;
-        this.state = state;
-    }
-
-    public CoffeeOrder(String customer, List<Coffee> items, OrderState state) {
-        this.customer = customer;
-        this.items = items;
-        this.state = state;
-    }
-
-    public CoffeeOrder() {
-    }
-
-    public String getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(String customer) {
-        this.customer = customer;
-    }
-
-    public List<Coffee> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Coffee> items) {
-        this.items = items;
-    }
-
-    public OrderState getState() {
-        return state;
-    }
-
-    public void setState(OrderState state) {
-        this.state = state;
-    }
 }

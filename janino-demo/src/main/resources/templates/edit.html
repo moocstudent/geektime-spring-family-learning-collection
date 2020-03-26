@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>edit codes</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+        textarea::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color:orangered;
+        }
+        textarea:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: orangered;
+        }
+        textarea::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: orangered;
+        }
+        textarea::-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: orangered;
+
+        }
+
+    </style>
+</head>
+<body>
+<textarea rows="30" cols="130" id="textarea1"
+          placeholder="please code here~~" style="background-color: blue;color: snow">
+public static void main(){
+
+
+}
+
+main();
+</textarea>
+<br>
+<button id="submitBtn">提交运行</button>
+<br>
+<h3>运行结果:</h3>
+<div style="background-color: lightsalmon">
+<span id="cookResult"></span>
+</div>
+</body>
+<script>
+    $("#submitBtn").click(cook);
+
+    function cook(){
+        $.ajax({
+            url:'/edit/cookCodes',
+            type:"POST",
+            data:{"codes":$("#textarea1").val()},
+            dataType:"json",
+            success:function(data){
+                if(data.success){
+                    $("#cookResult").html(data.print)
+                }else{
+                    $("#cookResult").html("");
+                }
+            }
+        })
+    }
+
+
+</script>
+</html>
