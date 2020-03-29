@@ -36,6 +36,24 @@ public static void main(){
 
 main();
 </textarea>
+<textarea rows="30" cols="50" id="textarea2"
+          placeholder="" style="background-color: black;color: snow">
+public static boolean testEquals(int[] arr1,int[] arr2){
+
+    if(arr1.length!=arr2.length){
+        return false;
+    }
+    int arrLenth = arr1.length;
+    while(arrLenth!=0){
+        if(arr1[arrLength-1]!=arr2[arrLength-1]){
+            return false;
+        }
+        arrLength --;
+    }
+    return true;
+}
+
+</textarea>
 <br>
 <button id="submitBtn">提交运行</button>
 <br>
@@ -51,7 +69,8 @@ main();
         $.ajax({
             url:'/edit/cookCodes',
             type:"POST",
-            data:{"codes":$("#textarea1").val()},
+            data:{"codes":$("#textarea1").val(),"codes2":$("#textarea2").val()},
+            // data:{"codes":$("#textarea1").val()},
             dataType:"json",
             success:function(data){
                 if(data.success){

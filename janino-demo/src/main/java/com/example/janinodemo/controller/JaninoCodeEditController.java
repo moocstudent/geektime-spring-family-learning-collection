@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,8 +21,16 @@ import java.util.Map;
 @RestController
 public class JaninoCodeEditController {
     @PostMapping("/cookCodes")
-    public Map<String, Object> giveHimCodes(String codes, HttpServletResponse response, HttpServletRequest request) {
+    public Map<String, Object> giveHimCodes(String codes,String codes2, HttpServletResponse response, HttpServletRequest request) {
         Map<String, Object> resultMap = new HashMap<>();
+        int[] arr = {11,22,3,34,15,9,86,7,7,55,475,8,49};
+        Arrays.sort(arr);
+        int [] goodResult = arr;
+        String goodResultStr = "";
+        Arrays.equals(arr,goodResult);
+        for(int i=0;i<goodResult.length;i++){
+            goodResultStr += goodResult[i]+ " ";
+        }
         if (StringUtils.isEmpty(codes)) {
             return null;
         } else {
@@ -30,17 +39,32 @@ public class JaninoCodeEditController {
                 PrintStream printStream = new PrintStream("print.txt");
                 System.setOut(new SystemLogHandler(printStream));
                 ScriptEvaluator scriptEvaluator = new ScriptEvaluator();
+                codes = codes+codes2;
+                codes=codes+"int[] arr = {11,22,3,34,15,9,86,7,7,55,475,8,49};";
+                codes=codes+"int[] arr2 = {3,7, 7, 8 ,9 ,11, 15 ,22, 34, 49, 55 ,86, 475};";
+                codes=codes+"int[] result = sortArr(arr);";
+//                codes=codes+"System.out.println(\"实际返回:\"+result);";
+//                System.out.println("期望返回:"+"{3,7, 7, 8 ,9 ,11, 15 ,22, 34, 49, 55 ,86, 475}");
+                codes=codes+"boolean isEquals = testEquals(result,arr2);";
+
+                codes=codes+"System.out.println(\"testEquals测试结果\"+isEquals);";
                 scriptEvaluator.cook(codes);
+//                scriptEvaluator.cook(codes2);
+
+
+
                 Object evaluate = scriptEvaluator.evaluate(new Object[0]);
                 FileReader fileReader = new FileReader("print.txt");
                 BufferedReader br = new BufferedReader(fileReader);
                 StringBuilder sb = new StringBuilder();
                 String temp = "";
+
                 while ((temp = br.readLine()) != null) {
                     // 拼接换行符
                     sb.append(temp + "</br>");
                 }
                 br.close();
+//                Assert.assertArrayEquals(goodResult,re );
                 String js = sb.toString();
                 resultMap.put("success", 1);
                 resultMap.put("evaluate", evaluate);
@@ -59,6 +83,9 @@ public class JaninoCodeEditController {
         }
         return resultMap;
     }
+
+
+
 
     public static String readFileContent(String fileName) {
         File file = new File(fileName);
