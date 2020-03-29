@@ -46,7 +46,7 @@ public static void main(){
 main();
 ```
 
-
+选择排序:
 ```java
 public static int[] sortArr(int[] arr){
 
@@ -138,4 +138,51 @@ public static boolean testEquals(int[] arr1,int[] arr2){
 }
 
 
+```
+
+冒泡排序:
+```java
+public static int[] sortArr(int[] arr){
+     //冒泡排序
+     System.out.println("原始arr:"+arrToString(arr));
+     //遍历数组,开始下标从1开始
+     System.out.println("length:"+arr.length);
+     int count = 0;
+     for(int i=1;i<arr.length;i++){
+         count ++;
+         boolean flag = true;
+         //内存循环 j 从0开始,遍历长度为每次(i)获取了最大的数后-1
+         for(int j=0;j<arr.length-i;j++){
+             //如果当前的值大于了其紧挨着的后面的值,进行两两交换
+             if(arr[j] > arr[j+1]){
+                 int tmp = arr[j];
+                 arr[j] = arr[j+1];
+                 arr[j+1] = tmp;
+                 flag = false;
+             }
+            
+         }
+        //如果本次没有进入两两比较,即前一个数并不大于后一个那么直接跳过本次循环
+         if(flag){
+           System.out.println("count:"+count);
+           break;
+         }
+         System.out.println(arrToString(arr));
+     }
+     return arr;
+
+}
+
+public static String arrToString(int[] arr){
+   String result = "";
+   for(int i=0;i<arr.length;i++){
+      if(i!=arr.length-1){
+         result += arr[i]+",";
+      }else{
+         result += arr[i];
+      }
+   }
+   return result;
+
+}
 ```
