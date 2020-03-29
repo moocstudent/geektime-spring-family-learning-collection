@@ -1,7 +1,8 @@
 janino运行时编译
 web->janino->cook
-
-选择排序:
+[十大经典排序算法](https://www.runoob.com/w3cnote/ten-sorting-algorithm.html)
+<br>
+选择排序: main()方法不在使用见下面的选择排序
 ```
 public static void main(){
      //数组1
