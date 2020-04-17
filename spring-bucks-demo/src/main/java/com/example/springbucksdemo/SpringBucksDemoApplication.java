@@ -23,12 +23,30 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * lesson 18 1:00
+ * lesson 18
+ * Repository
+ * @EnableJpaRepositories (帮我自动发现CurdRepository等这样的接口的扩展)
+ *
+ * 定义查询
+ * 根据方法名定义查询
+ * find...By... / read...By... / query...By / get...By...
+ * count...By...
+ * ...OrderBy... [Asc / Desc]
+ * And / Or / IgnoreCase
+ * Top / First / Distinct
+ *
+ * 分页查询
+ * PagingAndSortingRepository<T,ID>
+ *   Pageable/Sort
+ *   Slice<T>/Page<T>
+ *
+ *
  */
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableTransactionManagement
 public class SpringBucksDemoApplication implements ApplicationRunner {
+
     @Autowired
     private CoffeeRepository coffeeRepository;
     @Autowired
