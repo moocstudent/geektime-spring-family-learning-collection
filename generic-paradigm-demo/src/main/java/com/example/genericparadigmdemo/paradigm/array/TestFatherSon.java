@@ -6,4 +6,5 @@ public class TestFatherSon {
         Father foo = new Son();
         foo.f1(new B());
     }
+
 }
