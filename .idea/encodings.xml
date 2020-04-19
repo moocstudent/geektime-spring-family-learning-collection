@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/aop-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datasource-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/druid-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/generic-paradigm-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/janino-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpa-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/multi-datasource-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/programmatic-transaction-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proxy-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-bucks-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/utils-demo" charset="UTF-8" />
+  </component>
+</project>

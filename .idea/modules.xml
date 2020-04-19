@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aop-demo/aop-demo.iml" filepath="$PROJECT_DIR$/aop-demo/aop-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/datasource-demo/datasource-demo.iml" filepath="$PROJECT_DIR$/datasource-demo/datasource-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/druid-demo/druid-demo.iml" filepath="$PROJECT_DIR$/druid-demo/druid-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/geektime-spring-family-learning.iml" filepath="$PROJECT_DIR$/.idea/geektime-spring-family-learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generic-paradigm-demo/generic-paradigm-demo.iml" filepath="$PROJECT_DIR$/generic-paradigm-demo/generic-paradigm-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/janino-demo/janino-demo.iml" filepath="$PROJECT_DIR$/janino-demo/janino-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa-demo/jpa-demo.iml" filepath="$PROJECT_DIR$/jpa-demo/jpa-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multi-datasource-demo/multi-datasource-demo.iml" filepath="$PROJECT_DIR$/multi-datasource-demo/multi-datasource-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-demo/mybatis-demo.iml" filepath="$PROJECT_DIR$/mybatis-demo/mybatis-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programmatic-transaction-demo/programmatic-transaction-demo.iml" filepath="$PROJECT_DIR$/programmatic-transaction-demo/programmatic-transaction-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxy-demo/proxy-demo.iml" filepath="$PROJECT_DIR$/proxy-demo/proxy-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-bucks-demo/spring-bucks-demo.iml" filepath="$PROJECT_DIR$/spring-bucks-demo/spring-bucks-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utils-demo/utils-demo.iml" filepath="$PROJECT_DIR$/utils-demo/utils-demo.iml" />
+    </modules>
+  </component>
+</project>

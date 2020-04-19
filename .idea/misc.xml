@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/spring-bucks-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/janino-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/datasource-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/druid-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/jpa-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/multi-datasource-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/programmatic-transaction-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/utils-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/generic-paradigm-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/proxy-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/aop-demo/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
