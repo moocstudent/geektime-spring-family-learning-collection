@@ -18,6 +18,8 @@
         <option value="$PROJECT_DIR$/generic-paradigm-demo/pom.xml" />
         <option value="$PROJECT_DIR$/proxy-demo/pom.xml" />
         <option value="$PROJECT_DIR$/aop-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/helloworld-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/cache-demo/pom.xml" />
       </list>
     </option>
   </component>

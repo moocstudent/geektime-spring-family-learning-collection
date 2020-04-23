@@ -8,9 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="aop-demo" />
+        <module name="cache-demo" />
         <module name="datasource-demo" />
         <module name="druid-demo" />
         <module name="generic-paradigm-demo" />
+        <module name="helloworld-demo" />
         <module name="janino-demo" />
         <module name="jpa-demo" />
         <module name="multi-datasource-demo" />
@@ -23,9 +25,11 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aop-demo" target="1.8" />
+      <module name="cache-demo" target="1.8" />
       <module name="datasource-demo" target="1.8" />
       <module name="druid-demo" target="1.8" />
       <module name="generic-paradigm-demo" target="1.8" />
+      <module name="helloworld-demo" target="1.8" />
       <module name="janino-demo" target="1.8" />
       <module name="jpa-demo" target="1.8" />
       <module name="multi-datasource-demo" target="1.8" />

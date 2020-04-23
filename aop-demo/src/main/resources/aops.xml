@@ -4,4 +4,9 @@
         <type>before</type>
         <method>eat</method>
     </aop>
+    <aop>
+        <method>bath</method>
+        <type>after</type>
+        <method>eat</method>
+    </aop>
 </aops>
