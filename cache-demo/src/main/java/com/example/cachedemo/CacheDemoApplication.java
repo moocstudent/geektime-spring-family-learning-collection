@@ -11,6 +11,14 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * >>>为不同的缓存提供一层抽象
+ * 为Java方法增加缓存,缓存执行结果
+ * 支持ConcurrentMap,EhCache,Caffeine,JCache(JSR-107)
+ * 接口
+ *  -- org.springframework.cache.Cache
+ *  -- org.springframework.cache.CacheManager
+ */
 @Slf4j
 @EnableTransactionManagement
 @SpringBootApplication
