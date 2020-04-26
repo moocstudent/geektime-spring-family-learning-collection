@@ -2,6 +2,7 @@ package com.example.redisdemo.model;
 
 import lombok.*;
 import org.hibernate.annotations.Type;
+//joda money肯定在商业软件中会用的到
 import org.joda.money.Money;
 
 import javax.persistence.Entity;
