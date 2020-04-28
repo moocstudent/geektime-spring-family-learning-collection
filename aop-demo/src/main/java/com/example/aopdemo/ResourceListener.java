@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 
 public class ResourceListener {
 
-	private static ExecutorService fixedThreadPool=Executors.newCachedThreadPool();
+	private static ExecutorService fixedThreadPool= Executors.newCachedThreadPool();
     private WatchService ws;
     private String listenerPath;
     private ResourceListener(String path){
