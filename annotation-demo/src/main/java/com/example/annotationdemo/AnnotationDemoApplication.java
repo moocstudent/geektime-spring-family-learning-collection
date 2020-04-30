@@ -37,6 +37,28 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * - 成员变量
  * - 局部变量/形参变量/类型参数
  *
+ * @Retention 这个注解用来修饰其他注解的存在范围
+ * RetentionPolicy.SOURCE 注解仅存在源码,不在class文件
+ * RetentionPolicy.CLASS 这是默认的注解保留策略,注解存在于.class文件,但是不能被JVM加载
+ * RetentionPolicy.RUNTIME 这种策略下,注解可以被JVM运行时访问到.通常,可以结合反射来做一些事情
+ *
+ * @Target 限定目标注解作用于什么位置
+ * ElementType.ANNOTATION_TYPE (修饰注解)
+ * ElementType.CONSTRUCTOR
+ * ElementType.FIELD
+ * ElementType.LOCAL_VARIABLE
+ * ElementType.METHOD
+ * ElementType.PACKAGE
+ * ElementType.PARAMETER
+ * ElementType.TYPE (任何类型,即上面的类型都可以修饰)
+ *
+ * @Inherited 让一个类和它的子类都包含某个注解
+ *
+ * @Repeatable 从JDK1.8引入 表示被修饰的注解可以重复应用标注
+ * 需要定义注解和容器注解
+ *
+ * @Documented 指明这个注解可以被Javadoc工具解析,形成帮助文档
+ *
  */
 @SpringBootApplication
 public class AnnotationDemoApplication {
