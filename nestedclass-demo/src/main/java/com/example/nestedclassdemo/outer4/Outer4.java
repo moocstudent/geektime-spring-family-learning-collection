@@ -1,5 +1,14 @@
 package com.example.nestedclassdemo.outer4;
 
+/**
+ * 静态嵌套类的语法总结
+ * - 需要加修饰符static
+ * - 可以定义静态成员和非静态成员
+ * - 不能直接访问包围类的非静态成员,可直接访问包围类的静态成员
+ *  = 可通过包围类的对象进行访问非静态成员
+ * - 外界可以通过静态嵌套类名访问其静态成员,通过对象访问其非静态成员
+ * - 外界需要通过包围类才可以访问到静态嵌套类,并创建其对象,不需要外部包围类的实例
+ */
 public class Outer4 {
     private String outField1 = "outer 111";
     private static String outStaticField2 = "outer static 222";
