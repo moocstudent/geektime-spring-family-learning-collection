@@ -38,8 +38,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * - 局部变量/形参变量/类型参数
  *
  * @Retention 这个注解用来修饰其他注解的存在范围
- * RetentionPolicy.SOURCE 注解仅存在源码,不在class文件
+ * RetentionPolicy.SOURCE 注解仅存在源码,不在class文件,也不会被JVM加载
+ * 只有在源码级别进行注解处理
+ * Java提供注解处理器来解析带注解的源码,产生新的文件
+ *
  * RetentionPolicy.CLASS 这是默认的注解保留策略,注解存在于.class文件,但是不能被JVM加载
+ * 只能采用字节码工具进行特殊处理 如ASM工具,https://asm.ow2.io/
+ *
+ *
  * RetentionPolicy.RUNTIME 这种策略下,注解可以被JVM运行时访问到.通常,可以结合反射来做一些事情
  *
  * @Target 限定目标注解作用于什么位置
@@ -59,6 +65,23 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @Documented 指明这个注解可以被Javadoc工具解析,形成帮助文档
  *
+ * 反射解析注解:
+ * Class.getAnnotations()
+ * Class.isAnnotation()
+ * Class.isAnnotationPresent(Class annotationClass)
+ * Method.getAnnotations()
+ * Method.isAnnotationPresent(Class annotationClass)
+ * Field.getAnnotations()
+ * Field.isAnnotationPresent(Class annotationClass)
+ * Constructor.getAnnotations()
+ * Constructor.isAnnotationPresent(Class annotationClass)
+ *
+ * RUNTIME注解的设计思路
+ * 传统的接口中的变量,都是public final static
+ * 注解需要随意赋值
+ *  - 注解方法表示变量
+ *  - 采用代理类拦截注解方法访问
+ *  - 所有的注解的赋值,都放在Map中,访问速度快
  */
 @SpringBootApplication
 public class AnnotationDemoApplication {
