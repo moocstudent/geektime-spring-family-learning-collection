@@ -82,6 +82,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *  - 注解方法表示变量
  *  - 采用代理类拦截注解方法访问
  *  - 所有的注解的赋值,都放在Map中,访问速度快
+ *
+ *  注解已成为很多框架的标配
+ *  需要了解注解的用法,更要理解它的原理
+ *  不要滥用,特别是大团队使用多个框架/第三方库的兼容协调
+ *  要注意第三方软件升级所带来的注解差异
  */
 @SpringBootApplication
 public class AnnotationDemoApplication {
