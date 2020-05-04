@@ -15,6 +15,12 @@ import java.util.concurrent.Executors;
  * send 数据
  * Microsoft Telnet> send hello
  * @author ukzq
+ *
+ * Java BIO 问题分析
+ * 1) 每个请求都需要创建独立的线程,与对应的客户端进行数据Read,业务处理,数据Write,数据交互
+ * 2) 当并发数较大时,需要创建大量线程来处理连接,系统资源占用较大
+ * 3) 连接建立后,如果当前线程暂时没有数据可读,则线程就阻塞在Read操作上,造成线程资源浪费
+ *
  */
 public class BIOServer {
 
