@@ -11,6 +11,11 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 
+/**
+ * 开启后在黑窗口使用
+ * telnet 127.0.0.1 9123 回车
+ * 开始通讯 不支持telnet先要开启telnet
+ */
 public class MinaTimeServer {
 
     private static final int PORT = 9123;
