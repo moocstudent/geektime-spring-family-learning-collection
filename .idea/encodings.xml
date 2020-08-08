@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/annotation-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cache-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cache-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/datasource-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datasource-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/druid-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/druid-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/errorcode-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/generic-paradigm-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/generic-paradigm-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/helloworld-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/helloworld-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hutool-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/janino-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/janino-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jpa-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpa-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lambda-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mina-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multi-datasource-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/multi-datasource-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nestedclass-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/netty-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/programmatic-transaction-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/programmatic-transaction-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/proxy-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proxy-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/reactor-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redis-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redis-reactive-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/simple-jdbc-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bucks-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-bucks-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/utils-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/utils-demo/src/main/java" charset="UTF-8" />
   </component>
 </project>

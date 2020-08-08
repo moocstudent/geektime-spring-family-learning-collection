@@ -51,8 +51,6 @@ public class JaninoCodeEditController {
                 scriptEvaluator.cook(codes);
 //                scriptEvaluator.cook(codes2);
 
-
-
                 Object evaluate = scriptEvaluator.evaluate(new Object[0]);
                 FileReader fileReader = new FileReader("print.txt");
                 BufferedReader br = new BufferedReader(fileReader);

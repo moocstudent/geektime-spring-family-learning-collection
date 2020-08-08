@@ -4,8 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * Blocking IO
@@ -26,7 +25,8 @@ public class BIOServer {
 
     public static void main(String[] args) throws IOException {
         //创建线程池
-        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        ExecutorService cachedThreadPool = new ThreadPoolExecutor(
+                10,10,60L, TimeUnit.SECONDS,new ArrayBlockingQueue<>(10));
         //创建ServerSocket
         ServerSocket serverSocket = new ServerSocket(6666);
         System.out.println("BIOServer服务器启动了");
