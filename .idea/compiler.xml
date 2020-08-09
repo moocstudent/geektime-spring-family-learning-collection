@@ -10,8 +10,9 @@
         <module name="druid-demo" />
         <module name="annotation-demo" />
         <module name="utils-demo" />
-        <module name="nestedclass-demo" />
         <module name="programmatic-transaction-demo" />
+        <module name="webflux-demo" />
+        <module name="mongo-demo" />
         <module name="simple-jdbc-demo" />
         <module name="multi-datasource-demo" />
         <module name="lambda-demo" />
@@ -22,15 +23,18 @@
         <module name="aop-demo" />
         <module name="helloworld-demo" />
         <module name="errorcode-demo" />
-        <module name="mina-demo" />
+        <module name="redis-reactive-demo" />
+        <module name="webflux-mongodb-demo" />
         <module name="cache-demo" />
         <module name="generic-paradigm-demo" />
         <module name="netty-demo" />
-        <module name="redis-demo" />
-        <module name="redis-reactive-demo" />
         <module name="spring-bucks-demo" />
-        <module name="mybatis-demo" />
+        <module name="redis-demo" />
+        <module name="mina-demo" />
+        <module name="webflux-restful-demo" />
+        <module name="nestedclass-demo" />
         <module name="janino-demo" />
+        <module name="mybatis-demo" />
         <module name="jpa-demo" />
       </profile>
     </annotationProcessing>
@@ -48,6 +52,7 @@
       <module name="jpa-demo" target="1.8" />
       <module name="lambda-demo" target="1.8" />
       <module name="mina-demo" target="1.8" />
+      <module name="mongo-demo" target="1.8" />
       <module name="multi-datasource-demo" target="1.8" />
       <module name="mybatis-demo" target="1.8" />
       <module name="nestedclass-demo" target="1.8" />
@@ -60,6 +65,9 @@
       <module name="simple-jdbc-demo" target="1.8" />
       <module name="spring-bucks-demo" target="1.8" />
       <module name="utils-demo" target="1.8" />
+      <module name="webflux-demo" target="1.8" />
+      <module name="webflux-mongodb-demo" target="1.8" />
+      <module name="webflux-restful-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -77,6 +85,7 @@
       <module name="jpa-demo" options="-parameters" />
       <module name="lambda-demo" options="-parameters" />
       <module name="mina-demo" options="-parameters" />
+      <module name="mongo-demo" options="-parameters" />
       <module name="multi-datasource-demo" options="-parameters" />
       <module name="mybatis-demo" options="-parameters" />
       <module name="nestedclass-demo" options="-parameters" />
@@ -89,6 +98,9 @@
       <module name="simple-jdbc-demo" options="-parameters" />
       <module name="spring-bucks-demo" options="-parameters" />
       <module name="utils-demo" options="-parameters" />
+      <module name="webflux-demo" options="-parameters" />
+      <module name="webflux-mongodb-demo" options="-parameters" />
+      <module name="webflux-restful-demo" options="-parameters" />
     </option>
   </component>
 </project>

@@ -22,6 +22,7 @@
     <file url="file://$PROJECT_DIR$/jpa-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lambda-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mina-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mongo-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multi-datasource-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multi-datasource-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-demo" charset="UTF-8" />
@@ -40,5 +41,8 @@
     <file url="file://$PROJECT_DIR$/spring-bucks-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/utils-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/utils-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webflux-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webflux-mongodb-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webflux-restful-demo/src/main/java" charset="UTF-8" />
   </component>
 </project>

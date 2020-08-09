@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/jpa-demo/jpa-demo.iml" filepath="$PROJECT_DIR$/jpa-demo/jpa-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/lambda-demo/lambda-demo.iml" filepath="$PROJECT_DIR$/lambda-demo/lambda-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mina-demo/mina-demo.iml" filepath="$PROJECT_DIR$/mina-demo/mina-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongo-demo/mongo-demo.iml" filepath="$PROJECT_DIR$/mongo-demo/mongo-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/multi-datasource-demo/multi-datasource-demo.iml" filepath="$PROJECT_DIR$/multi-datasource-demo/multi-datasource-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-demo/mybatis-demo.iml" filepath="$PROJECT_DIR$/mybatis-demo/mybatis-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/nestedclass-demo/nestedclass-demo.iml" filepath="$PROJECT_DIR$/nestedclass-demo/nestedclass-demo.iml" />
@@ -28,6 +29,9 @@
       <module fileurl="file://$PROJECT_DIR$/simple-jdbc-demo/simple-jdbc-demo.iml" filepath="$PROJECT_DIR$/simple-jdbc-demo/simple-jdbc-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-bucks-demo/spring-bucks-demo.iml" filepath="$PROJECT_DIR$/spring-bucks-demo/spring-bucks-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/utils-demo/utils-demo.iml" filepath="$PROJECT_DIR$/utils-demo/utils-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webflux-demo/webflux-demo.iml" filepath="$PROJECT_DIR$/webflux-demo/webflux-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webflux-mongodb-demo/webflux-mongodb-demo.iml" filepath="$PROJECT_DIR$/webflux-mongodb-demo/webflux-mongodb-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webflux-restful-demo/webflux-restful-demo.iml" filepath="$PROJECT_DIR$/webflux-restful-demo/webflux-restful-demo.iml" />
     </modules>
   </component>
 </project>
