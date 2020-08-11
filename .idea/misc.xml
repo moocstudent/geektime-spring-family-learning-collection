@@ -35,6 +35,7 @@
         <option value="$PROJECT_DIR$/webflux-restful-demo/pom.xml" />
         <option value="$PROJECT_DIR$/webflux-mongodb-demo/pom.xml" />
         <option value="$PROJECT_DIR$/mongo-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/binarytree-demo/pom.xml" />
       </list>
     </option>
   </component>

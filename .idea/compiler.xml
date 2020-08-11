@@ -7,40 +7,42 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="druid-demo" />
-        <module name="annotation-demo" />
-        <module name="utils-demo" />
-        <module name="programmatic-transaction-demo" />
-        <module name="webflux-demo" />
-        <module name="mongo-demo" />
-        <module name="simple-jdbc-demo" />
-        <module name="multi-datasource-demo" />
-        <module name="lambda-demo" />
-        <module name="proxy-demo" />
-        <module name="hutool-demo" />
-        <module name="datasource-demo" />
         <module name="reactor-demo" />
-        <module name="aop-demo" />
-        <module name="helloworld-demo" />
-        <module name="errorcode-demo" />
-        <module name="redis-reactive-demo" />
-        <module name="webflux-mongodb-demo" />
-        <module name="cache-demo" />
-        <module name="generic-paradigm-demo" />
-        <module name="netty-demo" />
+        <module name="simple-jdbc-demo" />
+        <module name="lambda-demo" />
+        <module name="binarytree-demo" />
         <module name="spring-bucks-demo" />
-        <module name="redis-demo" />
-        <module name="mina-demo" />
-        <module name="webflux-restful-demo" />
+        <module name="webflux-mongodb-demo" />
+        <module name="redis-reactive-demo" />
+        <module name="jpa-demo" />
+        <module name="datasource-demo" />
         <module name="nestedclass-demo" />
+        <module name="hutool-demo" />
+        <module name="webflux-demo" />
+        <module name="multi-datasource-demo" />
+        <module name="netty-demo" />
+        <module name="druid-demo" />
+        <module name="mongo-demo" />
+        <module name="redis-demo" />
+        <module name="cache-demo" />
+        <module name="webflux-restful-demo" />
+        <module name="proxy-demo" />
+        <module name="aop-demo" />
+        <module name="errorcode-demo" />
         <module name="janino-demo" />
         <module name="mybatis-demo" />
-        <module name="jpa-demo" />
+        <module name="utils-demo" />
+        <module name="helloworld-demo" />
+        <module name="generic-paradigm-demo" />
+        <module name="mina-demo" />
+        <module name="annotation-demo" />
+        <module name="programmatic-transaction-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="annotation-demo" target="1.8" />
       <module name="aop-demo" target="1.8" />
+      <module name="binarytree-demo" target="1.8" />
       <module name="cache-demo" target="1.8" />
       <module name="datasource-demo" target="1.8" />
       <module name="druid-demo" target="1.8" />
@@ -74,6 +76,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="annotation-demo" options="-parameters" />
       <module name="aop-demo" options="-parameters" />
+      <module name="binarytree-demo" options="-parameters" />
       <module name="cache-demo" options="-parameters" />
       <module name="datasource-demo" options="-parameters" />
       <module name="druid-demo" options="-parameters" />
