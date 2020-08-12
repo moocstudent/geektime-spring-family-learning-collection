@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/binarytree-demo/binarytree-demo.iml" filepath="$PROJECT_DIR$/binarytree-demo/binarytree-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/cache-demo/cache-demo.iml" filepath="$PROJECT_DIR$/cache-demo/cache-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/datasource-demo/datasource-demo.iml" filepath="$PROJECT_DIR$/datasource-demo/datasource-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/drools-helloworld-demo/drools-helloworld-demo.iml" filepath="$PROJECT_DIR$/drools-helloworld-demo/drools-helloworld-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/druid-demo/druid-demo.iml" filepath="$PROJECT_DIR$/druid-demo/druid-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/errorcode-demo/errorcode-demo.iml" filepath="$PROJECT_DIR$/errorcode-demo/errorcode-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/geektime-spring-family-learning.iml" filepath="$PROJECT_DIR$/.idea/geektime-spring-family-learning.iml" />

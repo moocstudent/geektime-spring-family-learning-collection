@@ -1,0 +1,24 @@
+package com.rules;
+import com.example.droolshelloworlddemo.model.Car
+import com.example.droolshelloworlddemo.model.Person
+dialect  "mvel"
+//场景:汽车折旧率 年龄超过60,打8折,其它打9折
+//rule1
+rule "drool7Api bigger than 60"
+
+when
+    $Car : Car(person.age > 60)
+then
+    $Car.setDiscount(80);
+    System.out.println("test-drools7-older bigger than 60"+$Car.getPerson().getAge());
+end
+
+//rule2
+rule "drool7Api less equals 60"
+
+when
+    $Car : Car(person.age<=60)
+then
+    $Car.setDiscount(90);
+    System.out.println("test-drools7-other less equals 60"+$Car.getPerson().getAge());
+end
