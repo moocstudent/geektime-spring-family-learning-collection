@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eventbus-demo/eventbus-demo.iml" filepath="$PROJECT_DIR$/eventbus-demo/eventbus-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloworld-demo/helloworld-demo.iml" filepath="$PROJECT_DIR$/helloworld-demo/helloworld-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/verticle-demo/verticle-demo.iml" filepath="$PROJECT_DIR$/verticle-demo/verticle-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vertx-cookies-demo/vertx-cookies-demo.iml" filepath="$PROJECT_DIR$/vertx-cookies-demo/vertx-cookies-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vertx-learning-demo-list.iml" filepath="$PROJECT_DIR$/vertx-learning-demo-list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vertx-session-demo/vertx-sessiondemo.iml" filepath="$PROJECT_DIR$/vertx-session-demo/vertx-sessiondemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vertx-timer-demo/vertx-timer-demo.iml" filepath="$PROJECT_DIR$/vertx-timer-demo/vertx-timer-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vertx-web-demo/vertx-web-demo.iml" filepath="$PROJECT_DIR$/vertx-web-demo/vertx-web-demo.iml" />
+    </modules>
+  </component>
+</project>

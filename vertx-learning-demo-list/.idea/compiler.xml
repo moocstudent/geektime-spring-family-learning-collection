@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="vertx-timer-demo" />
+        <module name="vertx-sessiondemo" />
+        <module name="vertx-learning-demo-list" />
+        <module name="vertx-web-demo" />
+        <module name="verticle-demo" />
+        <module name="vertx-cookies-demo" />
+        <module name="helloworld-demo" />
+        <module name="eventbus-demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eventbus-demo" target="1.8" />
+      <module name="helloworld-demo" target="1.8" />
+      <module name="verticle-demo" target="1.8" />
+      <module name="vertx-cookies-demo" target="1.8" />
+      <module name="vertx-learning-demo-list" target="1.8" />
+      <module name="vertx-session-demo" target="1.8" />
+      <module name="vertx-sessiondemo" target="1.8" />
+      <module name="vertx-timer-demo" target="1.8" />
+      <module name="vertx-web-demo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eventbus-demo" options="-parameters" />
+      <module name="helloworld-demo" options="-parameters" />
+      <module name="verticle-demo" options="-parameters" />
+      <module name="vertx-cookies-demo" options="-parameters" />
+      <module name="vertx-learning-demo-list" options="-parameters" />
+      <module name="vertx-session-demo" options="-parameters" />
+      <module name="vertx-sessiondemo" options="-parameters" />
+      <module name="vertx-timer-demo" options="-parameters" />
+      <module name="vertx-web-demo" options="-parameters" />
+    </option>
+  </component>
+</project>
