@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: rule
+      option:
+        max-connection-idle-time: 1500
+        max-connection-per-host: 200
+        max-wait-time: 60000
+        max-connection-life-time: 0
+        connect-timeout: 10000
+        socket-timeout: 60000
+      password: 'admin'
+      username: admin
+      authentication-database: admin
+
+server:
+  port: 82

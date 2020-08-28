@@ -1,0 +1,78 @@
+package com.rules;
+import com.example.droolshelloworlddemo.model.ComparisonOperatorEntity
+dialect  "mvel"
+
+/*
+当前规则文件用于测试Drools提供的比较操作符
+contains
+not contains
+memberOf
+not memberOf
+*/
+
+//测试比较操作符contains
+rule "comparison_contains"
+    when
+        ComparisonOperatorEntity(names contains "张三")
+        and
+        ComparisonOperatorEntity(list contains names)
+    then
+        System.out.println("comparison_contains触发了");
+end
+
+//测试比较操作符not contains
+rule "comparison_not_contains"
+    when
+        ComparisonOperatorEntity(names not contains "张三")
+        or
+        ComparisonOperatorEntity(list not contains "NONE")
+    then
+        System.out.println("comparison_not_contains触发了");
+end
+
+//测试比较操作符memberOf
+rule "comparison_memberOf"
+    when
+        //names工作内存中在list中是否是一个成员
+        ComparisonOperatorEntity(names memberOf list)
+    then
+        System.out.println("comparison_memberOf触发了");
+end
+
+//测试比较操作符not memberOf
+rule "comparison_not_memberOf"
+    when
+        //names工作内存中在list中是否 不是一个成员
+        ComparisonOperatorEntity(names not memberOf list)
+    then
+        System.out.println("comparison_not_memberOf触发了");
+end
+
+//测试比较操作符 matches
+rule "comparison_matches"
+    when
+        //集合不能直接使用matches
+        //ComparisonOperatorEntity(list matches "王.*")
+        ComparisonOperatorEntity(names matches "张.*")
+    then
+        System.out.println("comparison_matches触发了");
+end
+
+//测试比较操作符 matches
+rule "comparison_matches_2"
+    when
+        //集合不能直接使用matches
+        //ComparisonOperatorEntity(list matches "王.*")
+        ComparisonOperatorEntity(list.get(0) matches "张.*")
+    then
+        System.out.println("comparison_matches_2触发了");
+end
+
+//测试比较操作符 not matches
+rule "comparison_not_matches"
+    when
+        //集合不能直接使用matches
+        ComparisonOperatorEntity(names not matches "none.*")
+    then
+        System.out.println("comparison_not_matches触发了");
+end

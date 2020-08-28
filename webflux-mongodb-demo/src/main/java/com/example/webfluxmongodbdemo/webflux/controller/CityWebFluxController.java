@@ -18,7 +18,7 @@ public class CityWebFluxController {
     private CityHandler cityHandler;
 
     @GetMapping("/{id}")
-    public Mono<City> findCityById(@PathVariable("id")Long id){
+    public Mono<City> findCityById(@PathVariable("id")String id){
         return cityHandler.findCityById(id);
     }
 
@@ -38,7 +38,7 @@ public class CityWebFluxController {
     }
 
     @DeleteMapping("/{id}")
-    public Mono<Long> deleteCity(@PathVariable("id")Long id){
+    public Mono<String> deleteCity(@PathVariable("id")String id){
         return cityHandler.deleteCity(id);
     }
 }

@@ -19,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/lambda-demo/lambda-demo.iml" filepath="$PROJECT_DIR$/lambda-demo/lambda-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mina-demo/mina-demo.iml" filepath="$PROJECT_DIR$/mina-demo/mina-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mongo-demo/mongo-demo.iml" filepath="$PROJECT_DIR$/mongo-demo/mongo-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb-reactivestreams-demo/mongodb-reactivestreams-demo.iml" filepath="$PROJECT_DIR$/mongodb-reactivestreams-demo/mongodb-reactivestreams-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/multi-datasource-demo/multi-datasource-demo.iml" filepath="$PROJECT_DIR$/multi-datasource-demo/multi-datasource-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-demo/mybatis-demo.iml" filepath="$PROJECT_DIR$/mybatis-demo/mybatis-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/nestedclass-demo/nestedclass-demo.iml" filepath="$PROJECT_DIR$/nestedclass-demo/nestedclass-demo.iml" />
@@ -29,6 +30,7 @@
       <module fileurl="file://$PROJECT_DIR$/redis-demo/redis-demo.iml" filepath="$PROJECT_DIR$/redis-demo/redis-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis-reactive-demo/redis-reactive-demo.iml" filepath="$PROJECT_DIR$/redis-reactive-demo/redis-reactive-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/simple-jdbc-demo/simple-jdbc-demo.iml" filepath="$PROJECT_DIR$/simple-jdbc-demo/simple-jdbc-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple-reactor-demo/simple-reactor-demo.iml" filepath="$PROJECT_DIR$/simple-reactor-demo/simple-reactor-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-bucks-demo/spring-bucks-demo.iml" filepath="$PROJECT_DIR$/spring-bucks-demo/spring-bucks-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/utils-demo/utils-demo.iml" filepath="$PROJECT_DIR$/utils-demo/utils-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/webflux-demo/webflux-demo.iml" filepath="$PROJECT_DIR$/webflux-demo/webflux-demo.iml" />

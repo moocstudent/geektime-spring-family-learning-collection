@@ -1,7 +1,7 @@
 package com.rules;
 import com.example.droolshelloworlddemo.model.Car
 import com.example.droolshelloworlddemo.model.Person
-dialect  "mvel"
+dialect  "java"
 //场景:汽车折旧率 年龄超过60,打8折,其它打9折
 //rule1
 rule "drool7Api bigger than 60"

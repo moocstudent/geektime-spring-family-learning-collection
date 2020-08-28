@@ -37,6 +37,8 @@
         <option value="$PROJECT_DIR$/mongo-demo/pom.xml" />
         <option value="$PROJECT_DIR$/binarytree-demo/pom.xml" />
         <option value="$PROJECT_DIR$/drools-helloworld-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/simple-reactor-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mongodb-reactivestreams-demo/pom.xml" />
       </list>
     </option>
   </component>

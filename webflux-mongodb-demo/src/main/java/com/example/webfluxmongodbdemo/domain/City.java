@@ -12,7 +12,7 @@ public class City {
      * 城市编号
      */
     @Id
-    private Long id;
+    private String id;
 
     /**
      * 省份编号
@@ -29,11 +29,11 @@ public class City {
      */
     private String description;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

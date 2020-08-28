@@ -1,0 +1,61 @@
+package com.rules; //package可以改为别的 只是概念性
+import com.example.droolshelloworlddemo.model.Order;
+import com.example.droolshelloworlddemo.model.Customer;
+
+dialect  "mvel"
+
+//rule名是唯一的
+
+//所购图书总价在100以下,没有优惠
+rule "bookDiscount-1"
+    when
+        //模式匹配写法 到规则引擎中(工作内存 Work Memory)查找Order对象
+        /**
+        匹配到的规则对象到->$order
+        **/
+        $order:Order(originalPrice < 100)
+    then
+        //工作内存中拿到的Order对象
+        //没有优惠的话设定原始价格=实际价格
+        $order.setRealPrice($order.getOriginalPrice());
+        System.out.println("成功匹配规则一");
+end
+
+//所购图书总价在100到200之间,优惠20元
+rule "bookDiscount-2"
+    when
+        //一个pattern
+        $order:Order($op:originalPrice >= 100 && $op < 200)
+        and //可以使用and or来做多个Fact的连接判定,默认不写即为and
+        $customer:Customer(age>20 && gender=='male')
+    then
+        //工作内存中拿到的Order对象
+        /**没有优惠的话设定原始价格=实际价格**/
+        $order.setRealPrice($order.getOriginalPrice()-20);
+        //获取originalPrice 原始的值
+        System.out.println($op);
+        System.out.println("成功匹配规则二");
+end
+
+//所购图书总价在200到300之间,优惠50元
+rule "bookDiscount-3"
+    when
+        //Order为类型约束,originalPrice为属性约束
+        $order:Order(originalPrice >= 200 && originalPrice < 300)
+    then
+        //工作内存中拿到的Order对象
+        //没有优惠的话设定原始价格=实际价格
+        $order.setRealPrice($order.getOriginalPrice()-50);
+        System.out.println("成功匹配规则三");
+end
+
+//所购图书总价在300以上,优惠100元
+rule "bookDiscount-4"
+    when
+        $order:Order(originalPrice >= 300)
+    then
+        //工作内存中拿到的Order对象
+        //没有优惠的话设定原始价格=实际价格
+        $order.setRealPrice($order.getOriginalPrice()-100);
+        System.out.println("成功匹配规则四");
+end

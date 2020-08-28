@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0e9711ff-47db-4a60-aeca-84d326b868b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_0_9_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_projectreactor_reactor_test_3_3_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_37.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_37.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_drools_drools_core_dynamic_7_41_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_drools_drools_core_reflective_7_41_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_kie_api_7_41_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_maven_support_7_41_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_mvel_mvel2_2_4_8_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_reactive_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_3_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_3_0_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/java/com/example/droolshelloworlddemo/model/ComparisonOperatorEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/java/com/example/droolshelloworlddemo/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/java/com/example/droolshelloworlddemo/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/java/com/example/droolshelloworlddemo/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/resources/com/rules/bookDiscount.drl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/resources/com/rules/comparisonOperator.drl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/resources/com/rules/student.drl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/test/java/com/example/droolshelloworlddemo/ComparisonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/test/java/com/example/droolshelloworlddemo/DroolsBookTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/test/java/com/example/droolshelloworlddemo/StudentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/controller/CoffeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/converter/MoneyReadConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/model/Coffee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/model/Rules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/service/CoffeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/service/RulesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-demo/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/src/main/java/com/example/mongodbreactivestreamsdemo/MongodbReactivestreamsDemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/src/main/java/com/example/mongodbreactivestreamsdemo/entity/Rule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/src/test/java/com/example/mongodbreactivestreamsdemo/MongodbReactivestreamsDemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/src/main/java/com/example/simplereactordemo/SimpleReactorDemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple-reactor-demo/src/test/java/com/example/simplereactordemo/SimpleReactorDemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/dao/RuleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/domain/Rule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/handler/RuleHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/webflux/controller/RuleWebFluxController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_google_protobuf_protobuf_java_2_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_11_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_drools_drools_compiler_7_7_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_drools_drools_compiler_7_41_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_drools_drools_core_7_7_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_drools_drools_core_7_41_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_drools_drools_templates_7_7_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_drools_drools_templates_7_41_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_eclipse_jdt_core_compiler_ecj_4_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_kie_api_7_7_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_kie_internal_7_7_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_kie_internal_7_41_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_commons_7_7_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_commons_7_41_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_maven_support_7_7_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_xstream_7_41_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_project_datamodel_api_7_7_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_project_datamodel_api_7_41_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_project_datamodel_commons_7_7_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_kie_soup_kie_soup_project_datamodel_commons_7_41_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_mvel_mvel2_2_4_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/resources/META-INF/kmodule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/resources/META-INF/kmodule.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/resources/com/rules/drool7Api.drl" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-helloworld-demo/src/main/resources/com/rules/drool7Api.drl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/MongoDemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-demo/src/main/java/com/example/mongodemo/MongoDemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-bucks-demo/src/main/java/com/example/springbucksdemo/repository/CoffeeOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-bucks-demo/src/main/java/com/example/springbucksdemo/repository/CoffeeOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../mongodb-reactivestreams-demo/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/dao/CityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/dao/CityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/domain/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/domain/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/handler/CityHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/handler/CityHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/webflux/controller/CityWebFluxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webfluxmongodbdemo/webflux/controller/CityWebFluxController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1gftVkcjnJsaqLaOsAZleaK0WQR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RunManager">
+    <configuration name="WebfluxMongodbDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="webflux-mongodb-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.webfluxmongodbdemo.WebfluxMongodbDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e9711ff-47db-4a60-aeca-84d326b868b7" name="Default Changelist" comment="" />
+      <created>1598517500396</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598517500396</updated>
+      <workItem from="1598517527641" duration="1307000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="595" y="314" key="Github.ShareDialog" timestamp="1598518565032">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="595" y="314" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1598518565032" />
+    <state x="324" y="118" key="RollbackChangesDialog" timestamp="1598518379171">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="324" y="118" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598518379171" />
+  </component>
+</project>

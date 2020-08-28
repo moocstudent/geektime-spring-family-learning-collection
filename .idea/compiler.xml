@@ -12,6 +12,7 @@
         <module name="simple-jdbc-demo" />
         <module name="lambda-demo" />
         <module name="binarytree-demo" />
+        <module name="simple-reactor-demo" />
         <module name="proxy-demo" />
         <module name="mongo-demo" />
         <module name="webflux-mongodb-demo" />
@@ -33,6 +34,7 @@
         <module name="mybatis-demo" />
         <module name="spring-bucks-demo" />
         <module name="utils-demo" />
+        <module name="mongodb-reactivestreams-demo" />
         <module name="helloworld-demo" />
         <module name="jpa-demo" />
         <module name="mina-demo" />
@@ -57,6 +59,7 @@
       <module name="lambda-demo" target="1.8" />
       <module name="mina-demo" target="1.8" />
       <module name="mongo-demo" target="1.8" />
+      <module name="mongodb-reactivestreams-demo" target="1.8" />
       <module name="multi-datasource-demo" target="1.8" />
       <module name="mybatis-demo" target="1.8" />
       <module name="nestedclass-demo" target="1.8" />
@@ -67,6 +70,7 @@
       <module name="redis-demo" target="1.8" />
       <module name="redis-reactive-demo" target="1.8" />
       <module name="simple-jdbc-demo" target="1.8" />
+      <module name="simple-reactor-demo" target="1.8" />
       <module name="spring-bucks-demo" target="1.8" />
       <module name="utils-demo" target="1.8" />
       <module name="webflux-demo" target="1.8" />
@@ -92,6 +96,7 @@
       <module name="lambda-demo" options="-parameters" />
       <module name="mina-demo" options="-parameters" />
       <module name="mongo-demo" options="-parameters" />
+      <module name="mongodb-reactivestreams-demo" options="-parameters" />
       <module name="multi-datasource-demo" options="-parameters" />
       <module name="mybatis-demo" options="-parameters" />
       <module name="nestedclass-demo" options="-parameters" />
@@ -102,6 +107,7 @@
       <module name="redis-demo" options="-parameters" />
       <module name="redis-reactive-demo" options="-parameters" />
       <module name="simple-jdbc-demo" options="-parameters" />
+      <module name="simple-reactor-demo" options="-parameters" />
       <module name="spring-bucks-demo" options="-parameters" />
       <module name="utils-demo" options="-parameters" />
       <module name="webflux-demo" options="-parameters" />

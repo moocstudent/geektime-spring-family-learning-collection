@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * @Date: 2020-08-09 17:30
  */
 @Repository
-public interface CityRepository extends ReactiveMongoRepository<City,Long> {
+public interface CityRepository extends ReactiveMongoRepository<City,String> {
 }

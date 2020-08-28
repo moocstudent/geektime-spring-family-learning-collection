@@ -1,0 +1,49 @@
+package com.rules;
+dialect  "java"
+import com.example.droolshelloworlddemo.model.Student
+
+//用于测试update使用
+/*
+每个rule块需要定义区分,除了name
+在创建rule时,id从1开始进行插入
+进行自增,在修改时将修改的id传入进行更改
+*/
+
+rule "要求student的age等于10岁"
+    agenda-group "student-group-1"
+    auto-focus true
+    when
+        $student:Student(age==10)
+    then
+        Student s = new Student();
+        s.setAge(5);
+        insert(s); //向工作内存中插入Fact对象,会导致规则进行重新匹配
+        System.out.println("要求student的age等于10岁 执行");
+end
+
+rule "要求student的age等于5岁"
+    when
+        $student:Student(age==5)
+    then
+        retract($student); //retract方法是删除工作内存中的Fact对象,会导致相关规则重新匹配
+        System.out.println("要求student的age等于5岁 执行");
+end
+
+//rule 1
+rule "要求student的age小于10岁"
+    when
+        $student:Student(age<10)
+    then
+        $student.setAge(15); //单纯setAge后并不会执行rule 2
+        update($student); //更新后会触发age 15的规则
+        System.out.println("要求student的age小于10岁 执行");
+end
+
+//rule 2
+rule "要求student的age大于10岁并小于20岁"
+    when
+        $student:Student(age<20 && age>10)
+    then
+//        $student.setAge(15);
+        System.out.println("要求student的age大于10岁并小于20岁 执行");
+end
