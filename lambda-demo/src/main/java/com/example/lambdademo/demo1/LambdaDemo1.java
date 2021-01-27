@@ -1,6 +1,8 @@
 package com.example.lambdademo.demo1;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class LambdaDemo1 {
 
@@ -18,6 +20,13 @@ public class LambdaDemo1 {
         System.out.println("使用Lambda,长度从大到小");
         Arrays.sort(planets,(first,second)->(-1)*(first.length()-second.length()));
         System.out.println(Arrays.toString(planets));
+
+        //使用真正lambda排序
+//        Arrays.stream(planets)
+//                .sorted(Comparator.comparing(String.class.hashCode()).reversed())
+//                .collect(Collectors.toList());
+
+
 
     }
 }

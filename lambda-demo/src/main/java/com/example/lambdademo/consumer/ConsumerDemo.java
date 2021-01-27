@@ -1,5 +1,6 @@
 package com.example.lambdademo.consumer;
 
+import java.util.Arrays;
 import java.util.function.Consumer;
 
 /**
@@ -15,8 +16,10 @@ public class ConsumerDemo {
         Consumer<String> printer = s ->
                 System.out.println("Planet : " + s);
 
-        for (String p : planets) {
-            printer.accept(p);
-        }
+//        for (String p : planets) {
+//            printer.accept(p);
+//        }
+        Arrays.asList(planets)
+                .forEach(plt->printer.accept(plt));
     }
 }

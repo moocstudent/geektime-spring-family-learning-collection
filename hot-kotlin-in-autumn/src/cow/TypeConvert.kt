@@ -53,4 +53,7 @@ fun main(args:Array<String>){
     getStringLength(test2)
     getStringLength1(test2)
     getStringLength2(test2)
+
+    var ss :String = "wrOgQhDgAAMYQiS5ol9G7gK9JVAAAA"
+    getStringLength("ss length: $ss")
 }

@@ -30,8 +30,8 @@ public class ReactorDemoApplication implements ApplicationRunner {
                 .doOnComplete(()->log.info("Publisher COMPLETE 2"))
                 .subscribeOn(Schedulers.single())
                 .onErrorResume(e->{
-                    log.error("Exception {}",e.toString());
-                    return Mono.just(-1);
+                        log.error("Exception {}",e.toString());
+                        return Mono.just(-1);
                 })
                 .onErrorReturn(-1)
                 .subscribe(i->log.info("Subscribe {}: {}",Thread.currentThread(),i),

@@ -50,8 +50,16 @@ fun test1(){
 
     //Boolean
     /**
-     * Kotlin have no Boolean !!!
+     * true and false !!!
      */
+    var bl : Boolean = true
+    if(bl){
+        println("is: "+bl)
+    }
+    bl = false
+    if(!bl){
+        print(",is: "+!bl)
+    }
 }
 
 fun main(args:Array<String>){

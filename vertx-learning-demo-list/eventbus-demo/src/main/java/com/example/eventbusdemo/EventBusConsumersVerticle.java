@@ -49,7 +49,8 @@ public class EventBusConsumersVerticle extends AbstractVerticle {
             }
         });
 
-        eb.publish("news.uk.sport","football game started");
+        EventBus football_game_started = eb.publish("news.uk.sport", "football game started");
+
         eb.publish("news.uk.finance","UK brexit");
 
         //not working
