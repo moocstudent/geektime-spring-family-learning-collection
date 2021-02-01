@@ -13,13 +13,13 @@ public class PredicateDemo {
                 "Jupiter", "Saturn", "Uranus", "Neptune"
         };
         Predicate<String> oddLength = s ->
-                s.length() % 2 == 0 ? false : true;
+                s.length() % 2 == 0;
 
         for (String p : planets) {
             if (oddLength.test(p)) {
-                System.out.println("=====奇数=====" + p + "," + p.length());
-            } else {
                 System.out.println("=====偶数=====" + p + "," + p.length());
+            } else {
+                System.out.println("=====奇数=====" + p + "," + p.length());
             }
         }
     }
