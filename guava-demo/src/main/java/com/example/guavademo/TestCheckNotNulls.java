@@ -21,6 +21,10 @@ public class TestCheckNotNulls {
         String p = Preconditions.checkNotNull(variable);
 //        String p1 = Preconditions.checkNotNull(variable1); //null pointer
 
+//        Preconditions.checkNotNull(variable1,"不能为空",1);
+
+        Preconditions.checkNotNull(variable1,"不能为空");
+
         System.out.println(p);
 //        System.out.println(p1);
 
