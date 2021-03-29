@@ -23,6 +23,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class ObserverDemoApplication implements ApplicationRunner {
 
 
+    public static final String CUSTOMER = "ZhangQi";
+
     public static void main(String[] args) {
         SpringApplication.run(ObserverDemoApplication.class, args);
     }
@@ -45,7 +47,7 @@ public class ObserverDemoApplication implements ApplicationRunner {
 //       System.out.println("coffeeSingleTest");
        Single<Coffee> latte = coffeeService.testAddCoffee(new Coffee(1, "Latte"));
        System.out.println(latte);
-       Single<Long> coffeeOrder = orderService.create(createOrder("ZhangQi", 1L));
+       Single<Long> coffeeOrder = orderService.create(createOrder(CUSTOMER, 1L));
        System.out.println(coffeeOrder);
        return latte;
 

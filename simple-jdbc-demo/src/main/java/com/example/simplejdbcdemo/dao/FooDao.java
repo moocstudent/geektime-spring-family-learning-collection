@@ -22,14 +22,14 @@ public class FooDao {
     private SimpleJdbcInsert simpleJdbcInsert;
 
     public void insertData(){
-        Arrays.asList("b","c").forEach(bar->{
-            jdbcTemplate.update("INSERT INTO FOO(BAR) VALUES (?)",bar);
+        Arrays.asList("b", "c").forEach(bar -> {
+            jdbcTemplate.update("INSERT INTO FOO(BAR) VALUES (?)", bar);
         });
 
         HashMap<String,String> row = new HashMap<>();
-        row.put("BAR","d");
+        row.put("BAR", "d");
         Number id = simpleJdbcInsert.executeAndReturnKey(row);
-        log.info("ID of d: {}",id.longValue());
+        log.info("ID of d: {}", id.longValue());
     }
 
     public void listData(){
@@ -41,7 +41,7 @@ public class FooDao {
 
         jdbcTemplate.query("SELECT * FROM FOO", new RowMapper<Foo>() {
             @Override
-            public Foo mapRow(ResultSet rs,int rowNum)throws SQLException {
+            public Foo mapRow(ResultSet rs, int rowNum) throws SQLException {
                 return Foo.builder()
                         .id(rs.getLong(1))
                         .bar(rs.getString(2))
