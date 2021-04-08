@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 完全二叉树的线性存储
  */
 public class FullBinaryTree {
-    private Object[] arr;
+    private final Object[] arr;
     private int size;
     //gouzaoqi Construct initialize the parameters
     FullBinaryTree(int capacity){

@@ -13,8 +13,8 @@ import java.util.Map;
 public class DijkstrasAlgorithm {
 
     //the graph
-    private static Map<String, Map<String,Double>> graph = new HashMap<>();
-    private static List<String> processed = new ArrayList<>();
+    private static final Map<String, Map<String,Double>> graph = new HashMap<>();
+    private static final List<String> processed = new ArrayList<>();
 
     private static String findLowestCostNode(Map<String,Double> costs){
         Double lowestCost = Double.POSITIVE_INFINITY;

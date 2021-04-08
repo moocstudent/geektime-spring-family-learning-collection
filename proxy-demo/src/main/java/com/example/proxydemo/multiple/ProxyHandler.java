@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class ProxyHandler implements InvocationHandler {
 
-    private Cook cook;
+    private final Cook cook;
 
     public ProxyHandler(Cook cook){
         this.cook = cook;
@@ -20,7 +20,11 @@ public class ProxyHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("proxy类型:"+proxy.getClass().getName());
         System.out.println("调用方法:"+method+":参数为:"+Arrays.deepToString(args));
-        Object result = method.invoke(cook, args);
+        Object result = method.invoke(getCook(), args);
         return result;
+    }
+
+    public Cook getCook() {
+        return cook;
     }
 }

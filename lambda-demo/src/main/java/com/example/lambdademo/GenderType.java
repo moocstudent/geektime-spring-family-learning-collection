@@ -15,6 +15,6 @@ public enum GenderType {
     MALE("male"),
     FEMALE("female");
 
-    private String code;
+    private final String code;
 
 }

@@ -14,7 +14,7 @@ class SelectionSortK {
             sortedArray += this[smallest]
             removeAt(smallest)
         }
-        return sortedArray;
+        return sortedArray
     }
 
     fun ArrayList<Int>.getSmallest():Int{

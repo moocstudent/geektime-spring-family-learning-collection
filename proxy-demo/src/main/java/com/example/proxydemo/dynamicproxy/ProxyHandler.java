@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
  */
 public class ProxyHandler implements InvocationHandler {
 
-    private Subject subject;
+    private final Subject subject;
 
     public ProxyHandler(Subject subject){
         this.subject = subject;

@@ -39,3 +39,4 @@ public class StudentTest {
         //7,关闭会话session
         kieSession.dispose();
     }
+}

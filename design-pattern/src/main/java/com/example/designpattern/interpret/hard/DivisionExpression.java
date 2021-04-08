@@ -5,8 +5,8 @@ package com.example.designpattern.interpret.hard;
  * @Date: 2021-02-10 12:23
  */
 public class DivisionExpression implements Expression{
-    private Expression exp1;
-    private Expression exp2;
+    private final Expression exp1;
+    private final Expression exp2;
 
     public DivisionExpression(Expression exp1,Expression exp2){
         this.exp1 = exp1;
@@ -15,7 +15,6 @@ public class DivisionExpression implements Expression{
 
     @Override
     public long interpret() {
-
         try {
             return exp1.interpret()/exp2.interpret();
         } catch (ArithmeticException e) {

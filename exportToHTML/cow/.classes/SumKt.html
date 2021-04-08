@@ -1,0 +1,131 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SumKt</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">cow</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SumKt (cow)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SumKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package cow
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * @Author: zhangQi
+<i>5</i>&nbsp; * @Date: 2020-08-29 21:24
+<i>6</i>&nbsp; */
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * the params a is a int, b is a int,return a int type
+<i>9</i>&nbsp; */
+<i>10</i>&nbsp;fun sum(a:Int,b:Int):Int{
+<b class="nc"><i>11</i>&nbsp;    return a+b</b>
+<i>12</i>&nbsp;}
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;/**
+<i>15</i>&nbsp; * functional fun the return type is automated
+<i>16</i>&nbsp; */
+<b class="nc"><i>17</i>&nbsp;fun sum1(a:Int,b:Int) = a+b</b>
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;/**
+<i>20</i>&nbsp; * the public fun must be use return type :Int or some else
+<i>21</i>&nbsp; */
+<b class="nc"><i>22</i>&nbsp;fun sum2(a:Int,b:Int):Int = a+b</b>
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;/**
+<i>25</i>&nbsp; * Unit means void in java , no return type
+<i>26</i>&nbsp; */
+<i>27</i>&nbsp;fun printSum(a:Int,b:Int):Unit{
+<b class="nc"><i>28</i>&nbsp;    print(a+b)</b>
+<i>29</i>&nbsp;}
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;/**
+<i>32</i>&nbsp; * if return type is Unit,
+<i>33</i>&nbsp; * then can ignore write that,
+<i>34</i>&nbsp; * also the public fun
+<i>35</i>&nbsp; */
+<i>36</i>&nbsp;fun printSum2(a:Int,b:Int){
+<b class="nc"><i>37</i>&nbsp;    print(a+b)</b>
+<i>38</i>&nbsp;}
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;fun main(){
+<b class="nc"><i>41</i>&nbsp;    println(sum(1,2))</b>
+<b class="nc"><i>42</i>&nbsp;    println(sum1(3,4))</b>
+<b class="nc"><i>43</i>&nbsp;    println(sum2(5,6))</b>
+<i>44</i>&nbsp;
+<b class="nc"><i>45</i>&nbsp;    printSum(1,3)</b>
+<b class="nc"><i>46</i>&nbsp;    println()</b>
+<b class="nc"><i>47</i>&nbsp;    printSum2(1,4)</b>
+<i>48</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

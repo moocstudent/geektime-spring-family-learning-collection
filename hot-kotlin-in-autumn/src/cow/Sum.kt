@@ -19,7 +19,7 @@ fun sum1(a:Int,b:Int) = a+b
 /**
  * the public fun must be use return type :Int or some else
  */
-public fun sum2(a:Int,b:Int):Int = a+b
+fun sum2(a:Int,b:Int):Int = a+b
 
 /**
  * Unit means void in java , no return type
@@ -33,7 +33,7 @@ fun printSum(a:Int,b:Int):Unit{
  * then can ignore write that,
  * also the public fun
  */
-public fun printSum2(a:Int,b:Int){
+fun printSum2(a:Int,b:Int){
     print(a+b)
 }
 

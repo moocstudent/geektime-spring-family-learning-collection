@@ -1,0 +1,126 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: IntervalCalculator</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.genericparadigmdemo.paradigm.calculator</a> ]
+</div>
+
+<h1>Coverage Summary for Class: IntervalCalculator (com.example.genericparadigmdemo.paradigm.calculator)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">IntervalCalculator</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/*
+<i>2</i>&nbsp; * Copyright (c) 2021. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<i>3</i>&nbsp; * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+<i>4</i>&nbsp; * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+<i>5</i>&nbsp; * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+<i>6</i>&nbsp; * Vestibulum commodo. Ut rhoncus gravida arcu.
+<i>7</i>&nbsp; */
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;package com.example.genericparadigmdemo.paradigm.calculator;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import com.example.genericparadigmdemo.paradigm.ParadigmFormatter;
+<i>12</i>&nbsp;
+<b class="nc"><i>13</i>&nbsp;public class IntervalCalculator implements Calculator&lt;ParadigmFormatter&lt;Integer&gt;&gt; {</b>
+<i>14</i>&nbsp;    @Override
+<i>15</i>&nbsp;    public ParadigmFormatter&lt;Integer&gt; add(ParadigmFormatter&lt;Integer&gt; operand1, ParadigmFormatter&lt;Integer&gt; operand2) {
+<b class="nc"><i>16</i>&nbsp;        int lower = operand1.getLower() + operand2.getLower();</b>
+<b class="nc"><i>17</i>&nbsp;        int upper = operand1.getUpper() + operand2.getUpper();</b>
+<b class="nc"><i>18</i>&nbsp;        return new ParadigmFormatter&lt;Integer&gt;(lower,upper);</b>
+<i>19</i>&nbsp;    }
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>22</i>&nbsp;        Calculator&lt;ParadigmFormatter&lt;Integer&gt;&gt; c = new IntervalCalculator();</b>
+<b class="nc"><i>23</i>&nbsp;        ParadigmFormatter&lt;Integer&gt; operand1 = new ParadigmFormatter&lt;&gt;(1,2);</b>
+<b class="nc"><i>24</i>&nbsp;        ParadigmFormatter&lt;Integer&gt; operand2 = new ParadigmFormatter&lt;&gt;(3,4);</b>
+<b class="nc"><i>25</i>&nbsp;        ParadigmFormatter&lt;Integer&gt; operand3 = c.add(operand1, operand2);</b>
+<b class="nc"><i>26</i>&nbsp;        System.out.println(operand3.getLower());</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    @Override
+<i>30</i>&nbsp;    public ParadigmFormatter&lt;Integer&gt; addMany(ParadigmFormatter&lt;Integer&gt;... operands) {
+<b class="nc"><i>31</i>&nbsp;        return null;</b>
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    @Override
+<i>35</i>&nbsp;    public ParadigmFormatter&lt;Integer&gt; sub(ParadigmFormatter&lt;Integer&gt; operand1, ParadigmFormatter&lt;Integer&gt; operand2) {
+<b class="nc"><i>36</i>&nbsp;        return null;</b>
+<i>37</i>&nbsp;    }
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    @Override
+<i>40</i>&nbsp;    public ParadigmFormatter&lt;Integer&gt; multiplication(ParadigmFormatter&lt;Integer&gt;... operands) {
+<b class="nc"><i>41</i>&nbsp;        return null;</b>
+<i>42</i>&nbsp;    }
+<i>43</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

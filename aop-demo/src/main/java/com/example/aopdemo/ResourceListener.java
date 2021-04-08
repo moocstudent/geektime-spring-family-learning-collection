@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 
 public class ResourceListener {
 
-	private static ExecutorService fixedThreadPool= Executors.newCachedThreadPool();
+	private static final ExecutorService fixedThreadPool= Executors.newCachedThreadPool();
     private WatchService ws;
     private String listenerPath;
     private ResourceListener(String path){
@@ -59,8 +59,8 @@ public class ResourceListener {
                     for(WatchEvent<?> event : watchEvents){  
                     	String context = event.context().toString();//对象
                     	String kind = event.kind().toString();//变更类型
-                    	if(context.equals("aops.xml")){
-                    		if(kind.equals("ENTRY_MODIFY")){
+                    	if("aops.xml".equals(context)){
+                    		if("ENTRY_MODIFY".equals(kind)){
                     			XmlReader.readXml(listenerPath+"/"+event.context());
                     		}
                     	}

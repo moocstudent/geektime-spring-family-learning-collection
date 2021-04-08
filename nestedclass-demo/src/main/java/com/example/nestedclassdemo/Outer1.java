@@ -13,7 +13,7 @@ package com.example.nestedclassdemo;
  * - 没有类名,外部包围类和其他类也无法访问到匿名内部类
  */
 public class Outer1 {
-    private String name = "abc";
+    private final String name = "abc";
 
     public void f1(){
         String name = "def";
@@ -22,7 +22,7 @@ public class Outer1 {
             //匿名内部类不能定义静态变量,除非是常量
             public final static int a = 5;
             //public static int b = 3;
-            String name = "ghi";
+            final String name = "ghi";
             @Override
             public void run() {
                 System.out.println("hello "+name);

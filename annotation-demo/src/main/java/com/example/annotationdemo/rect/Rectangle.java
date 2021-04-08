@@ -1,9 +1,9 @@
 package com.example.annotationdemo.rect;
 
 public class Rectangle {
-    private Point topLeft;
-    private int width;
-    private int height;
+    private final Point topLeft;
+    private final int width;
+    private final int height;
     public Rectangle(Point topLeft,int width,int height){
         this.topLeft = topLeft;
         this.width = width;

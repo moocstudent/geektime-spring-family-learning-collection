@@ -1,0 +1,125 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CoffeeService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.cachedemo.service</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CoffeeService (com.example.cachedemo.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CoffeeService</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.cachedemo.service;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.cachedemo.model.Coffee;
+<i>4</i>&nbsp;import com.example.cachedemo.repository.CoffeeRepository;
+<i>5</i>&nbsp;import lombok.extern.slf4j.Slf4j;
+<i>6</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>7</i>&nbsp;import org.springframework.cache.annotation.CacheConfig;
+<i>8</i>&nbsp;import org.springframework.cache.annotation.CacheEvict;
+<i>9</i>&nbsp;import org.springframework.cache.annotation.Cacheable;
+<i>10</i>&nbsp;import org.springframework.data.domain.Example;
+<i>11</i>&nbsp;import org.springframework.data.domain.ExampleMatcher;
+<i>12</i>&nbsp;import org.springframework.stereotype.Service;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;import java.util.List;
+<i>15</i>&nbsp;import java.util.Optional;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.exact;
+<i>18</i>&nbsp;
+<b class="nc"><i>19</i>&nbsp;@Slf4j</b>
+<i>20</i>&nbsp;@Service
+<i>21</i>&nbsp;@CacheConfig(cacheNames = &quot;coffee&quot;)
+<b class="nc"><i>22</i>&nbsp;public class CoffeeService {</b>
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    @Autowired
+<i>25</i>&nbsp;    private CoffeeRepository coffeeRepository;
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    @Cacheable
+<i>28</i>&nbsp;    public List&lt;Coffee&gt; findAllCoffee(){
+<b class="nc"><i>29</i>&nbsp;        return coffeeRepository.findAll();</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    @CacheEvict
+<i>33</i>&nbsp;    public void reloadCoffee(){}
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;    public Optional&lt;Coffee&gt; findOneCoffee(String name){
+<b class="nc"><i>36</i>&nbsp;        ExampleMatcher matcher = ExampleMatcher.matching()</b>
+<b class="nc"><i>37</i>&nbsp;                .withMatcher(&quot;name&quot;, exact().ignoreCase());</b>
+<b class="nc"><i>38</i>&nbsp;        Optional&lt;Coffee&gt; coffee = coffeeRepository.findOne(Example.of(Coffee.builder().name(name).build(), matcher));</b>
+<b class="nc"><i>39</i>&nbsp;        return coffee;</b>
+<i>40</i>&nbsp;        //从外地公司辞职/被离职,回到家,继而再深入java
+<i>41</i>&nbsp;    }
+<i>42</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

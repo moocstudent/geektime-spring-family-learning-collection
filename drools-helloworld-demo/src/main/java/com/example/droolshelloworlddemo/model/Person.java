@@ -4,6 +4,7 @@ package com.example.droolshelloworlddemo.model;
  * @Author: zhangQi
  * @Date: 2020-08-12 12:45
  */
+@Deprecated
 public class Person {
     private int id;
     private String name;

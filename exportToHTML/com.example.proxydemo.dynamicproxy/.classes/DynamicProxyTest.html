@@ -1,0 +1,115 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DynamicProxyTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.proxydemo.dynamicproxy</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DynamicProxyTest (com.example.proxydemo.dynamicproxy)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DynamicProxyTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.proxydemo.dynamicproxy;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.proxydemo.subject.Subject;
+<i>4</i>&nbsp;import com.example.proxydemo.subject.SubjectImpl;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.lang.reflect.Proxy;
+<i>7</i>&nbsp;
+<b class="nc"><i>8</i>&nbsp;public class DynamicProxyTest {</b>
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    public static void main(String[] args) {
+<i>11</i>&nbsp;        //1.创建目标对象
+<b class="nc"><i>12</i>&nbsp;        SubjectImpl realSubject = new SubjectImpl();</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;        //2.创建调用处理器对象
+<b class="nc"><i>15</i>&nbsp;        ProxyHandler proxyHandler = new ProxyHandler(realSubject);</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;        //3.动态生成代理对象
+<b class="nc"><i>18</i>&nbsp;        Subject proxySubject =</b>
+<b class="nc"><i>19</i>&nbsp;                (Subject) Proxy.newProxyInstance(</b>
+<b class="nc"><i>20</i>&nbsp;                SubjectImpl.class.getClassLoader(),</b>
+<b class="nc"><i>21</i>&nbsp;                SubjectImpl.class.getInterfaces(), proxyHandler</b>
+<i>22</i>&nbsp;        );
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;        //4.客户端通过代理对象调用方法
+<i>25</i>&nbsp;        //本次调用将自动被代理处理器的invoke方法接收
+<b class="nc"><i>26</i>&nbsp;        proxySubject.request();</b>
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;//        proxySubject.response();
+<i>29</i>&nbsp;
+<b class="nc"><i>30</i>&nbsp;        System.out.println(proxySubject.getClass().getName());</b>
+<i>31</i>&nbsp;    }
+<i>32</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TypeConvertKt</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">cow</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TypeConvertKt (cow)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TypeConvertKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 30)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package cow
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * @Author: zhangQi
+<i>5</i>&nbsp; * @Date: 2020-08-30 15:58
+<i>6</i>&nbsp; */
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * getStringLength, but the convert to String is automatic
+<i>9</i>&nbsp; */
+<i>10</i>&nbsp;fun getStringLength(obj: Any): Int? {
+<i>11</i>&nbsp;    //judgement the type of data : Any
+<b class="nc"><i>12</i>&nbsp;    if (obj is String) {</b>
+<b class="nc"><i>13</i>&nbsp;        return obj.length</b>
+<b class="nc"><i>14</i>&nbsp;    } else if (obj !is String) {</b>
+<b class="nc"><i>15</i>&nbsp;        println(&quot;obj is not String&quot;)</b>
+<b class="nc"><i>16</i>&nbsp;    } else if (obj is Int) {</b>
+<b class="nc"><i>17</i>&nbsp;        println(&quot;obj is Int, get length of obj : Int&quot;)</b>
+<b class="nc"><i>18</i>&nbsp;        return obj.length</b>
+<i>19</i>&nbsp;    } else {
+<b class="nc"><i>20</i>&nbsp;        println(&quot;other type don&#39;t return length~&quot;)</b>
+<b class="nc"><i>21</i>&nbsp;        return null</b>
+<b class="nc"><i>22</i>&nbsp;    }</b>
+<b class="nc"><i>23</i>&nbsp;    return null</b>
+<i>24</i>&nbsp;}
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;fun getStringLength1(obj: Any): Int? {
+<b class="nc"><i>27</i>&nbsp;    if(obj is String){</b>
+<b class="nc"><i>28</i>&nbsp;        return obj.length</b>
+<i>29</i>&nbsp;    }
+<b class="nc"><i>30</i>&nbsp;    return null</b>
+<i>31</i>&nbsp;}
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;fun getStringLength2(obj: Any):Int?{
+<b class="nc"><i>34</i>&nbsp;    if(obj !is String){</b>
+<b class="nc"><i>35</i>&nbsp;        return null</b>
+<i>36</i>&nbsp;    }
+<b class="nc"><i>37</i>&nbsp;    return obj.length</b>
+<i>38</i>&nbsp;}
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;fun main(args:Array&lt;String&gt;){
+<i>41</i>&nbsp;    //变量永远不会被修改，可以使用“val”声明为不可变变量
+<b class="nc"><i>42</i>&nbsp;    val str1 :String = &quot;www.cnblogs.com/ukzq&quot;</b>
+<b class="nc"><i>43</i>&nbsp;    val l1 = getStringLength(str1)</b>
+<b class="nc"><i>44</i>&nbsp;    println(l1)</b>
+<i>45</i>&nbsp;
+<b class="nc"><i>46</i>&nbsp;    val l2 = getStringLength1(str1)</b>
+<b class="nc"><i>47</i>&nbsp;    println(l2)</b>
+<i>48</i>&nbsp;
+<b class="nc"><i>49</i>&nbsp;    val l3 = getStringLength2(str1)</b>
+<b class="nc"><i>50</i>&nbsp;    println(l3)</b>
+<i>51</i>&nbsp;
+<b class="nc"><i>52</i>&nbsp;    val test2 :Long = 20160404</b>
+<b class="nc"><i>53</i>&nbsp;    getStringLength(test2)</b>
+<b class="nc"><i>54</i>&nbsp;    getStringLength1(test2)</b>
+<b class="nc"><i>55</i>&nbsp;    getStringLength2(test2)</b>
+<i>56</i>&nbsp;
+<b class="nc"><i>57</i>&nbsp;    var ss :String = &quot;wrOgQhDgAAMYQiS5ol9G7gK9JVAAAA&quot;</b>
+<b class="nc"><i>58</i>&nbsp;    getStringLength(&quot;ss length: $ss&quot;)</b>
+<i>59</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

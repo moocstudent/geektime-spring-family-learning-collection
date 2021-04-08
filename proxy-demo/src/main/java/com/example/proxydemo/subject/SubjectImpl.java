@@ -6,8 +6,4 @@ public class SubjectImpl implements Subject{
         System.out.println("SubjectImpl request()");
     }
 
-    @Override
-    public void response() {
-        System.out.println("SubjectImpl response()");
-    }
 }

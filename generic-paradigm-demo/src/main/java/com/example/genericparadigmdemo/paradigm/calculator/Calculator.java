@@ -1,12 +1,20 @@
+/*
+ * Copyright (c) 2021. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+ * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+ * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+ * Vestibulum commodo. Ut rhoncus gravida arcu.
+ */
+
 package com.example.genericparadigmdemo.paradigm.calculator;
 
 public interface Calculator<T> {
 
-    public T add(T operand1, T operand2);
+    T add(T operand1, T operand2);
 
-    public T addMany(T...operands);
+    T addMany(T... operands);
 
-    public T sub(T operand1, T operand2);
+    T sub(T operand1, T operand2);
 
-    public T multiplication(T...operands);
+    T multiplication(T... operands);
 }

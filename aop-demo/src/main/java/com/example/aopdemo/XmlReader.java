@@ -41,7 +41,7 @@ public class XmlReader {
 			if (elementNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element element = (Element) elementNode;
 				String name = element.getNodeName();
-				if(name.equalsIgnoreCase("aop")){
+				if("aop".equalsIgnoreCase(name)){
 					readMethod(element.getChildNodes());
 				}
 				else{
@@ -58,14 +58,14 @@ public class XmlReader {
 			if (elementNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element element = (Element) elementNode;
 				String name = element.getNodeName();
-				if(name.equals("method")){
+				if("method".equals(name)){
 					if(methodName==null||methodName.length()==0) {
 						methodName = element.getFirstChild().getTextContent();
 					}
 				}
-				else if(name.equals("type")){
+				else if("type".equals(name)){
 					String type = element.getFirstChild().getTextContent();
-					if(type.equals("after")){
+					if("after".equals(type)){
 						ProxyHandler.afterMethod = methodName;
 					}
 					else{

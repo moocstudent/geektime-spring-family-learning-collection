@@ -13,9 +13,9 @@ public class BinaryTree {
     //结点
     private Node root;
     //结点数
-    private int size;
+    private final int size;
     //存放结点
-    private ArrayList<Node> list;
+    private final ArrayList<Node> list;
 
     public BinaryTree(){
         this.root = null;

@@ -1,5 +1,7 @@
 package dragon
 
+import src.dragon.DTest
+
 /**
  * @Author: zhangQi
  * @Date: 2020-09-20 18:01
@@ -17,10 +19,8 @@ class Dragon {
 
     var lastName: String = "Zhang"
         get() = field.toUpperCase()
-        set
 
     var no: Int = 100
-        get() = field
         set(value) {
             if (value < 10) {
                 field = value

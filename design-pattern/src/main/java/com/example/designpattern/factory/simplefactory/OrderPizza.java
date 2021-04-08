@@ -7,9 +7,9 @@ import java.util.Scanner;
  * @Date: 2021-02-10 9:44
  * test pizza factory from here
  */
-public class OrderPizzaY {
+public class OrderPizza {
 
-    public OrderPizzaY(){
+    public OrderPizza(){
         System.out.println("披萨店🍕营业咯");
         System.out.println("现有品种: chess , greek , china , 输入exit将退出披萨店哦");
         Pizza pizza = null;

@@ -8,7 +8,7 @@ public class ProxyHandler implements InvocationHandler {
     static String beforeMethod = "";
     static String afterMethod = "";
 
-    private Person receiverObject;
+    private final Person receiverObject;
 
     public ProxyHandler(Person person){
         this.receiverObject=person;

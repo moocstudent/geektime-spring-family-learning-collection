@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2021. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+ * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+ * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+ * Vestibulum commodo. Ut rhoncus gravida arcu.
+ */
+
 package com.example.genericparadigmdemo.paradigm.calculator;
 
 import org.springframework.stereotype.Component;
@@ -41,9 +49,9 @@ public class IntegerCalculator implements Calculator<Integer> {
         System.out.println(c2.add(3, 4));
 
         Calculator<Integer> c3 = new IntegerCalculator();
-        System.out.println(c3.multiplication(3,2,2));
+        System.out.println(c3.multiplication(3, 2, 2));
 
         Calculator<Integer> c4 = new IntegerCalculator();
-        System.out.println(c4.addMany(1,2,311,412,3,21,3));
+        System.out.println(c4.addMany(1, 2, 311, 412, 3, 21, 3));
     }
 }

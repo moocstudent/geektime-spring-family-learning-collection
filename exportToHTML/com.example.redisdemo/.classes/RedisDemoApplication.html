@@ -1,0 +1,147 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: RedisDemoApplication</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.redisdemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: RedisDemoApplication (com.example.redisdemo)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RedisDemoApplication</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.redisdemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.redisdemo.model.Coffee;
+<i>4</i>&nbsp;import com.example.redisdemo.service.CoffeeService;
+<i>5</i>&nbsp;import io.lettuce.core.ReadFrom;
+<i>6</i>&nbsp;import lombok.extern.slf4j.Slf4j;
+<i>7</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>8</i>&nbsp;import org.springframework.boot.ApplicationArguments;
+<i>9</i>&nbsp;import org.springframework.boot.ApplicationRunner;
+<i>10</i>&nbsp;import org.springframework.boot.SpringApplication;
+<i>11</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+<i>12</i>&nbsp;import org.springframework.boot.autoconfigure.data.redis.LettuceClientConfigurationBuilderCustomizer;
+<i>13</i>&nbsp;import org.springframework.context.annotation.Bean;
+<i>14</i>&nbsp;import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+<i>15</i>&nbsp;import org.springframework.data.redis.connection.RedisConnectionFactory;
+<i>16</i>&nbsp;import org.springframework.data.redis.core.RedisTemplate;
+<i>17</i>&nbsp;import org.springframework.transaction.annotation.EnableTransactionManagement;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;import java.util.Optional;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;/**
+<i>22</i>&nbsp; * 这是结合JPA REDIS在springboot中使用缓存的demo
+<i>23</i>&nbsp; */
+<b class="nc"><i>24</i>&nbsp;@Slf4j</b>
+<i>25</i>&nbsp;@EnableTransactionManagement
+<i>26</i>&nbsp;@SpringBootApplication
+<i>27</i>&nbsp;@EnableJpaRepositories
+<b class="nc"><i>28</i>&nbsp;public class RedisDemoApplication implements ApplicationRunner {</b>
+<i>29</i>&nbsp;    @Autowired
+<i>30</i>&nbsp;    private CoffeeService coffeeService;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>33</i>&nbsp;        SpringApplication.run(RedisDemoApplication.class, args);</b>
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    /**
+<i>37</i>&nbsp;     * 设置RedisTemplate Bean
+<i>38</i>&nbsp;     * @param redisConnectionFactory
+<i>39</i>&nbsp;     * @return
+<i>40</i>&nbsp;     */
+<i>41</i>&nbsp;    @Bean
+<i>42</i>&nbsp;    public RedisTemplate&lt;String,Coffee&gt; redisTemplate(RedisConnectionFactory redisConnectionFactory){
+<b class="nc"><i>43</i>&nbsp;        RedisTemplate&lt;String,Coffee&gt; template = new RedisTemplate&lt;&gt;();</b>
+<b class="nc"><i>44</i>&nbsp;        template.setConnectionFactory(redisConnectionFactory);</b>
+<b class="nc"><i>45</i>&nbsp;        return template;</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    @Bean
+<i>49</i>&nbsp;    public LettuceClientConfigurationBuilderCustomizer customizer(){
+<b class="nc"><i>50</i>&nbsp;        return builder -&gt; builder.readFrom(ReadFrom.MASTER_PREFERRED);</b>
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;    @Override
+<i>54</i>&nbsp;    public void run(ApplicationArguments args) throws Exception {
+<b class="nc"><i>55</i>&nbsp;        Optional&lt;Coffee&gt; c = coffeeService.findOneCoffee(&quot;mocha&quot;);</b>
+<b class="nc"><i>56</i>&nbsp;        log.info(&quot;Coffee {}&quot;,c);</b>
+<i>57</i>&nbsp;
+<b class="nc"><i>58</i>&nbsp;        for(int i=0;i&lt;5;i++){</b>
+<b class="nc"><i>59</i>&nbsp;            c = coffeeService.findOneCoffee(&quot;mocha&quot;);</b>
+<i>60</i>&nbsp;        }
+<i>61</i>&nbsp;
+<b class="nc"><i>62</i>&nbsp;        log.info(&quot;Value from Redis: {}&quot;,c);</b>
+<i>63</i>&nbsp;    }
+<i>64</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

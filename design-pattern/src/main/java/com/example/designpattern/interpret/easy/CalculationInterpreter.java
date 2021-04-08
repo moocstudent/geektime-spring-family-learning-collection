@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class CalculationInterpreter {
 
-    private Deque<Long> numbers = new LinkedList<>();
+    private final Deque<Long> numbers = new LinkedList<>();
 
     public long interpret(String expression, String calType) {
         String[] elements = null;
@@ -48,13 +48,13 @@ public class CalculationInterpreter {
                 long number1 = numbers.pollFirst();
                 long number2 = numbers.pollFirst();
                 long result = 0;
-                if (operator.equals("+")) {
+                if ("+".equals(operator)) {
                     result = number1 + number2;
-                } else if (operator.equals("-")) {
+                } else if ("-".equals(operator)) {
                     result = number1 - number2;
-                } else if (operator.equals("*")) {
+                } else if ("*".equals(operator)) {
                     result = number1 * number2;
-                } else if (operator.equals("/")) {
+                } else if ("/".equals(operator)) {
                     result = number1 / number2;
                 }
                 numbers.addFirst(result);
@@ -74,13 +74,13 @@ public class CalculationInterpreter {
                 long number1 = numbers.pollFirst();
                 long number2 = numbers.pollFirst();
                 long result = 0;
-                if (operator.equals("+")) {
+                if ("+".equals(operator)) {
                     result = number1 + number2;
-                } else if (operator.equals("-")) {
+                } else if ("-".equals(operator)) {
                     result = number1 - number2;
-                } else if (operator.equals("*")) {
+                } else if ("*".equals(operator)) {
                     result = number1 * number2;
-                } else if (operator.equals("/")) {
+                } else if ("/".equals(operator)) {
                     if(number2==0){
                         System.out.print("除数不能为0,表达式:"+expression+" 默认返回Long最大值:");
                     }

@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CalType</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.designpattern.interpret.easy</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CalType (com.example.designpattern.interpret.easy)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CalType</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.designpattern.interpret.easy;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import lombok.AllArgsConstructor;
+<i>4</i>&nbsp;import lombok.Getter;
+<i>5</i>&nbsp;import org.springframework.util.StringUtils;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.util.*;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;/**
+<i>10</i>&nbsp; * @Author: zhangQi
+<i>11</i>&nbsp; * @Date: 2021-02-10 10:12
+<i>12</i>&nbsp; * 计算器简单版
+<i>13</i>&nbsp; */
+<i>14</i>&nbsp;public class CalculationInterpreter {
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    private final Deque&lt;Long&gt; numbers = new LinkedList&lt;&gt;();
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    public long interpret(String expression, String calType) {
+<i>19</i>&nbsp;        String[] elements = null;
+<i>20</i>&nbsp;        if (calType.equals(CalType.STANDARD.code)) {
+<i>21</i>&nbsp;            expression = StringUtils.trimAllWhitespace(expression);
+<i>22</i>&nbsp;            elements = expression.split(&quot;&quot;);
+<i>23</i>&nbsp;            Arrays.asList(elements).forEach(System.out::print);
+<i>24</i>&nbsp;            System.out.print(&quot;=&quot;);
+<i>25</i>&nbsp;        } else if (calType.equals(CalType.BEHIND.code)) {
+<i>26</i>&nbsp;            //如果表达式包含空格
+<i>27</i>&nbsp;            if (expression.indexOf(&quot; &quot;) &gt; -1) {
+<i>28</i>&nbsp;                elements = expression.split(&quot; &quot;);
+<i>29</i>&nbsp;            } else {
+<i>30</i>&nbsp;                throw new RuntimeException(&quot;BIHIND 模式必须传入空格间隔数字和算数表达式&quot;);
+<i>31</i>&nbsp;            }
+<i>32</i>&nbsp;        }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;        int length = elements.length;
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;        if (calType.equals(CalType.STANDARD.code)) {
+<i>37</i>&nbsp;            for (int i = 0; i &lt; length; i += 2) {
+<i>38</i>&nbsp;                numbers.addLast(Long.parseLong(elements[i]));
+<i>39</i>&nbsp;            }
+<i>40</i>&nbsp;            for (int i = 1; i &lt; length; i += 2) {
+<i>41</i>&nbsp;                String operator = elements[i];
+<i>42</i>&nbsp;                boolean isValid = &quot;+&quot;.equals(operator) || &quot;-&quot;.equals(operator)
+<i>43</i>&nbsp;                        || &quot;*&quot;.equals(operator) || &quot;/&quot;.equals(operator);
+<i>44</i>&nbsp;                if (!isValid) {
+<i>45</i>&nbsp;                    throw new RuntimeException(&quot;Expression is invalid ,please check the symbol and space : &quot; + expression);
+<i>46</i>&nbsp;                }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;                long number1 = numbers.pollFirst();
+<i>49</i>&nbsp;                long number2 = numbers.pollFirst();
+<i>50</i>&nbsp;                long result = 0;
+<i>51</i>&nbsp;                if (&quot;+&quot;.equals(operator)) {
+<i>52</i>&nbsp;                    result = number1 + number2;
+<i>53</i>&nbsp;                } else if (&quot;-&quot;.equals(operator)) {
+<i>54</i>&nbsp;                    result = number1 - number2;
+<i>55</i>&nbsp;                } else if (&quot;*&quot;.equals(operator)) {
+<i>56</i>&nbsp;                    result = number1 * number2;
+<i>57</i>&nbsp;                } else if (&quot;/&quot;.equals(operator)) {
+<i>58</i>&nbsp;                    result = number1 / number2;
+<i>59</i>&nbsp;                }
+<i>60</i>&nbsp;                numbers.addFirst(result);
+<i>61</i>&nbsp;            }
+<i>62</i>&nbsp;        } else if (calType.equals(CalType.BEHIND.code)) {
+<i>63</i>&nbsp;            for (int i = 0 / 2; i &lt; (length+1)/2; ++i) {
+<i>64</i>&nbsp;                numbers.addLast(Long.parseLong(elements[i]));
+<i>65</i>&nbsp;            }
+<i>66</i>&nbsp;            for (int i = (length + 1) / 2; i &lt; length; ++i) {
+<i>67</i>&nbsp;                String operator = elements[i];
+<i>68</i>&nbsp;                boolean isValid = &quot;+&quot;.equals(operator) || &quot;-&quot;.equals(operator)
+<i>69</i>&nbsp;                        || &quot;*&quot;.equals(operator) || &quot;/&quot;.equals(operator);
+<i>70</i>&nbsp;                if (!isValid) {
+<i>71</i>&nbsp;                    throw new RuntimeException(&quot;Expression is invalid ,please check the symbol and space : &quot; + expression);
+<i>72</i>&nbsp;                }
+<i>73</i>&nbsp;
+<i>74</i>&nbsp;                long number1 = numbers.pollFirst();
+<i>75</i>&nbsp;                long number2 = numbers.pollFirst();
+<i>76</i>&nbsp;                long result = 0;
+<i>77</i>&nbsp;                if (&quot;+&quot;.equals(operator)) {
+<i>78</i>&nbsp;                    result = number1 + number2;
+<i>79</i>&nbsp;                } else if (&quot;-&quot;.equals(operator)) {
+<i>80</i>&nbsp;                    result = number1 - number2;
+<i>81</i>&nbsp;                } else if (&quot;*&quot;.equals(operator)) {
+<i>82</i>&nbsp;                    result = number1 * number2;
+<i>83</i>&nbsp;                } else if (&quot;/&quot;.equals(operator)) {
+<i>84</i>&nbsp;                    if(number2==0){
+<i>85</i>&nbsp;                        System.out.print(&quot;除数不能为0,表达式:&quot;+expression+&quot; 默认返回Long最大值:&quot;);
+<i>86</i>&nbsp;                    }
+<i>87</i>&nbsp;                    try {
+<i>88</i>&nbsp;                        result = number1 / number2;
+<i>89</i>&nbsp;                    } catch (Exception e) {
+<i>90</i>&nbsp;//                        e.printStackTrace();
+<i>91</i>&nbsp;                        return Long.MAX_VALUE;
+<i>92</i>&nbsp;                    }
+<i>93</i>&nbsp;                }
+<i>94</i>&nbsp;                numbers.addFirst(result);
+<i>95</i>&nbsp;            }
+<i>96</i>&nbsp;        }
+<i>97</i>&nbsp;
+<i>98</i>&nbsp;        if (numbers.size() != 1) {
+<i>99</i>&nbsp;            throw new RuntimeException(&quot;Expression is invalid: &quot; + expression);
+<i>100</i>&nbsp;        }
+<i>101</i>&nbsp;
+<i>102</i>&nbsp;        return numbers.pop();
+<i>103</i>&nbsp;    }
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;    public static void main(String[] args) {
+<i>106</i>&nbsp;        CalculationInterpreter cal = new CalculationInterpreter();
+<i>107</i>&nbsp;
+<i>108</i>&nbsp;        String expression1 = &quot;3+3&quot;;
+<i>109</i>&nbsp;        String expression2 = &quot;3 + 3&quot;;
+<i>110</i>&nbsp;        String expression3 = &quot;3 * 3&quot;;
+<i>111</i>&nbsp;        String expression4 = &quot;3 - 3&quot;;
+<i>112</i>&nbsp;        String expression5 = &quot;3 / 3 + 1&quot;;
+<i>113</i>&nbsp;        List&lt;String&gt; expressionList = new ArrayList&lt;&gt;();
+<i>114</i>&nbsp;        expressionList.add(expression1);
+<i>115</i>&nbsp;        expressionList.add(expression2);
+<i>116</i>&nbsp;        expressionList.add(expression3);
+<i>117</i>&nbsp;        expressionList.add(expression4);
+<i>118</i>&nbsp;        expressionList.add(expression5);
+<i>119</i>&nbsp;        expressionList.forEach(ex -&gt; System.out.println(cal.interpret(ex,CalType.STANDARD.code)));
+<i>120</i>&nbsp;
+<i>121</i>&nbsp;        System.out.println(&quot;-------------区分普通模式和后置模式------------&quot;);
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;        String behindExpression1 = &quot;3 3 +&quot;;
+<i>124</i>&nbsp;        String behindExpression2 = &quot;3 3 1 4 + - *&quot;;
+<i>125</i>&nbsp;        String behindExpression3 = &quot;5 3 1 4 0 - - * /&quot;;
+<i>126</i>&nbsp;        String behindExpression4 = &quot;2 3 1 4 0 9 * - * + +&quot;;
+<i>127</i>&nbsp;        List&lt;String&gt; behindExpressionList = new ArrayList&lt;&gt;();
+<i>128</i>&nbsp;        behindExpressionList.add(behindExpression1);
+<i>129</i>&nbsp;        behindExpressionList.add(behindExpression2);
+<i>130</i>&nbsp;        behindExpressionList.add(behindExpression3);
+<i>131</i>&nbsp;        behindExpressionList.add(behindExpression4);
+<i>132</i>&nbsp;        behindExpressionList.forEach(bhex-&gt; System.out.println(cal.interpret(bhex,CalType.BEHIND.code)));
+<i>133</i>&nbsp;    }
+<i>134</i>&nbsp;}
+<i>135</i>&nbsp;
+<b class="nc"><i>136</i>&nbsp;@Getter</b>
+<b class="nc"><i>137</i>&nbsp;@AllArgsConstructor</b>
+<i>138</i>&nbsp;enum CalType {
+<i>139</i>&nbsp;
+<b class="nc"><i>140</i>&nbsp;    STANDARD(&quot;standard&quot;,&quot;普通模式,如3+3&quot;),</b>
+<b class="nc"><i>141</i>&nbsp;    BEHIND(&quot;behind&quot;,&quot;后置模式,如3 3 +&quot;);</b>
+<i>142</i>&nbsp;
+<b class="nc"><i>143</i>&nbsp;    String code;</b>
+<b class="nc"><i>144</i>&nbsp;    String description;</b>
+<i>145</i>&nbsp;
+<i>146</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

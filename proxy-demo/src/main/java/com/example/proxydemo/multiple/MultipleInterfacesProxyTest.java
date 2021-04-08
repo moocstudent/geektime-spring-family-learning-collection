@@ -19,11 +19,11 @@ public class MultipleInterfacesProxyTest {
         ProxyHandler handler = new ProxyHandler(cook);
 
         //生成代理类型 这里的声明顺序是有关系的
-        Class<?> proxyClass = Proxy.getProxyClass(c1, new Class<?>[]{Cook.class, Driver.class});
+        Class<?> proxyClass = Proxy.getProxyClass(c1, Cook.class, Driver.class);
 
         //生成代理对象
         Object proxy = proxyClass.getConstructor(new Class[]{InvocationHandler.class})
-                .newInstance(new Object[]{handler});
+                .newInstance(handler);
         System.out.println(Proxy.isProxyClass(proxyClass));
 
         Proxy p = (Proxy) proxy;

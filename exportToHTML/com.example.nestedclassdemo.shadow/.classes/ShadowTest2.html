@@ -1,0 +1,138 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ShadowTest2</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.nestedclassdemo.shadow</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ShadowTest2 (com.example.nestedclassdemo.shadow)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ShadowTest2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ShadowTest2$1FirstLevel</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.nestedclassdemo.shadow;
+<i>2</i>&nbsp;
+<b class="nc"><i>3</i>&nbsp;public class ShadowTest2 {</b>
+<i>4</i>&nbsp;
+<b class="nc"><i>5</i>&nbsp;    public int x = 0;</b>
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;    public void f1(){
+<i>8</i>&nbsp;        //局部内部类无法访问得到!
+<b class="nc"><i>9</i>&nbsp;        int x = 20;</b>
+<i>10</i>&nbsp;
+<b class="nc"><i>11</i>&nbsp;        class FirstLevel{</b>
+<b class="nc"><i>12</i>&nbsp;            public final int x = 1;</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;            void methodInFirstLevel(int x){
+<b class="nc"><i>15</i>&nbsp;                System.out.println(&quot;x = &quot;+x); //line 14 x</b>
+<b class="nc"><i>16</i>&nbsp;                System.out.println(&quot;this.x = &quot;+this.x); //line 12 x</b>
+<b class="nc"><i>17</i>&nbsp;                System.out.println(&quot;ShadowTest.this.x = &quot;+ShadowTest2.this.x); //line 5 x</b>
+<i>18</i>&nbsp;            }
+<i>19</i>&nbsp;        }
+<i>20</i>&nbsp;
+<b class="nc"><i>21</i>&nbsp;        FirstLevel obj = new FirstLevel();</b>
+<b class="nc"><i>22</i>&nbsp;        obj.methodInFirstLevel(10);</b>
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    public static void main(String... args) {
+<b class="nc"><i>26</i>&nbsp;        ShadowTest2 st = new ShadowTest2();</b>
+<b class="nc"><i>27</i>&nbsp;        st.f1();</b>
+<i>28</i>&nbsp;    }
+<i>29</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

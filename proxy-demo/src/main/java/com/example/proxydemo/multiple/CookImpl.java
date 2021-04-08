@@ -5,4 +5,5 @@ public class CookImpl implements Cook{
     public void doWork() {
         System.out.println("Cook for myself");
     }
+
 }

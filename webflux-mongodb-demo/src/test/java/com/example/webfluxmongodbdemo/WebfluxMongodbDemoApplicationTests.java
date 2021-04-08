@@ -8,6 +8,7 @@ class WebfluxMongodbDemoApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("123000");
     }
 
 }

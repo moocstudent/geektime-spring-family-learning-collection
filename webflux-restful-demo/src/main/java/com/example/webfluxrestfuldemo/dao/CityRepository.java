@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @Repository
 public class CityRepository {
-    private ConcurrentMap<Long, City> repository = new ConcurrentHashMap<>();
+    private final ConcurrentMap<Long, City> repository = new ConcurrentHashMap<>();
 
     private static final AtomicLong idGenerator = new AtomicLong(0);
 

@@ -1,0 +1,222 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ProgrammaticTransactionDemoApplication</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.programmatictransactiondemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ProgrammaticTransactionDemoApplication (com.example.programmatictransactiondemo)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProgrammaticTransactionDemoApplication</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ProgrammaticTransactionDemoApplication$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.programmatictransactiondemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.programmatictransactiondemo.service.FooService;
+<i>4</i>&nbsp;import lombok.extern.slf4j.Slf4j;
+<i>5</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>6</i>&nbsp;import org.springframework.boot.CommandLineRunner;
+<i>7</i>&nbsp;import org.springframework.boot.SpringApplication;
+<i>8</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+<i>9</i>&nbsp;import org.springframework.jdbc.core.JdbcTemplate;
+<i>10</i>&nbsp;import org.springframework.transaction.TransactionStatus;
+<i>11</i>&nbsp;import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+<i>12</i>&nbsp;import org.springframework.transaction.support.TransactionTemplate;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;import java.sql.SQLTransactionRollbackException;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;/**
+<i>17</i>&nbsp; * 一致的事务模型
+<i>18</i>&nbsp; * JDBC/Hibernate/MyBatis
+<i>19</i>&nbsp; * DataSource/JTA
+<i>20</i>&nbsp; *
+<i>21</i>&nbsp; * 事务抽象的核心接口
+<i>22</i>&nbsp; * PlatformTransactionManager
+<i>23</i>&nbsp; * - DataSourceTransactionManager
+<i>24</i>&nbsp; * - HibernateTransactionManager
+<i>25</i>&nbsp; * - JtaTransactionManager
+<i>26</i>&nbsp; * TransactionDefinition
+<i>27</i>&nbsp; * - Propagation
+<i>28</i>&nbsp; * - Isolation
+<i>29</i>&nbsp; * - Timeout
+<i>30</i>&nbsp; * - Read-only status
+<i>31</i>&nbsp; *
+<i>32</i>&nbsp; * 事务传播特性
+<i>33</i>&nbsp; * |-------------------------------------------------------------------------|
+<i>34</i>&nbsp; * |传播性                          |  值  |          描述                     |
+<i>35</i>&nbsp; * |PROPAGATION_REQUIRED(必须)      |  0  | 当前有事务就用当前的,没有就用新的(默认) |
+<i>36</i>&nbsp; * |PROPAGATION_SUPPORTS(支持)      |  1  | 事务可有可无,不是必须的               |
+<i>37</i>&nbsp; * |PROPAGATION_MANDATORY(强制)     |  2  | 当前一定要有事务,不然就抛异常          |
+<i>38</i>&nbsp; * |PROPAGATION_REQUIRES_NEW(新)    |  3  | 无论是否有事务,都起个新的事务          |
+<i>39</i>&nbsp; * |PROPAGATION_NOT_SUPPORTED(不支持)|  4  | 不支持事务,按非事务方式运行           |
+<i>40</i>&nbsp; * |PROPAGATION_NEVER(从不支持)       |  5  |  不支持事务,如果有事务则抛异常        |
+<i>41</i>&nbsp; * |PROPAGATION_NESTED(嵌套事务)      |  6  | 当前有事务就在当前事务里再起一个事务    |
+<i>42</i>&nbsp; * |--------------------------------------------------------------------------|
+<i>43</i>&nbsp; *
+<i>44</i>&nbsp; * 事务隔离特性
+<i>45</i>&nbsp; * |-----------------------------------------------------|
+<i>46</i>&nbsp; * | 隔离性                    |值 |脏读 |不可重复读|  幻读  |
+<i>47</i>&nbsp; * |ISOLATION_READ_UNCOMMITTED| 1 | √  |   √    |   √    |
+<i>48</i>&nbsp; * |ISOLATION_READ_COMMITTED  | 2 | X  |   √    |   √    |
+<i>49</i>&nbsp; * |ISOLATION_REPEATABLE      | 3 | X  |   X    |   √    |
+<i>50</i>&nbsp; * |ISOLATION_SERIALIZABLE    | 4 | X  |   X    |   X    |
+<i>51</i>&nbsp; * |-----------------------------------------------------|
+<i>52</i>&nbsp; *
+<i>53</i>&nbsp; * 编程式事务
+<i>54</i>&nbsp; * TransactionTemplate
+<i>55</i>&nbsp; * - TransactionCallback
+<i>56</i>&nbsp; * - TransactionCallbackWithoutResult
+<i>57</i>&nbsp; * PlatformTransactionManager
+<i>58</i>&nbsp; * - 可以传入TransactionDefinition进行定义
+<i>59</i>&nbsp; *
+<i>60</i>&nbsp; * 基于注解的配置方式
+<i>61</i>&nbsp; * 开启事务注解的方式
+<i>62</i>&nbsp; * -@EnableTransactionManagerment
+<i>63</i>&nbsp; * -&lt;tx:annotation-driven/&gt;
+<i>64</i>&nbsp; * 一些配置
+<i>65</i>&nbsp; * -proxyTargetClass
+<i>66</i>&nbsp; * -mode
+<i>67</i>&nbsp; * -order
+<i>68</i>&nbsp; * -@Transactional
+<i>69</i>&nbsp; * -transactionManager
+<i>70</i>&nbsp; * -propagation
+<i>71</i>&nbsp; * -isolation
+<i>72</i>&nbsp; * -timeout
+<i>73</i>&nbsp; * -readOnly
+<i>74</i>&nbsp; * -怎么判断回滚
+<i>75</i>&nbsp; *
+<i>76</i>&nbsp; */
+<i>77</i>&nbsp;@SpringBootApplication(proxyBeanMethods=false)
+<b class="nc"><i>78</i>&nbsp;@Slf4j</b>
+<b class="nc"><i>79</i>&nbsp;public class ProgrammaticTransactionDemoApplication implements CommandLineRunner {</b>
+<i>80</i>&nbsp;    @Autowired
+<i>81</i>&nbsp;    private TransactionTemplate transactionTemplate;
+<i>82</i>&nbsp;    @Autowired
+<i>83</i>&nbsp;    private JdbcTemplate jdbcTemplate;
+<i>84</i>&nbsp;    @Autowired
+<i>85</i>&nbsp;    private FooService fooService;
+<i>86</i>&nbsp;
+<i>87</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>88</i>&nbsp;        SpringApplication.run(ProgrammaticTransactionDemoApplication.class, args);</b>
+<i>89</i>&nbsp;    }
+<i>90</i>&nbsp;
+<i>91</i>&nbsp;    @Override
+<i>92</i>&nbsp;    public void run(String... args) throws Exception {
+<b class="nc"><i>93</i>&nbsp;        log.info(&quot;COUNT BEFORE TRANSACTION : {}&quot;,getCount());</b>
+<b class="nc"><i>94</i>&nbsp;        transactionTemplate.execute(new TransactionCallbackWithoutResult() {</b>
+<i>95</i>&nbsp;            @Override
+<i>96</i>&nbsp;            protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
+<i>97</i>&nbsp;                //执行插入数据
+<b class="nc"><i>98</i>&nbsp;                jdbcTemplate.execute(&quot;INSERT INTO FOO(ID,BAR) VALUES (1,&#39;aaa&#39;)&quot;);</b>
+<b class="nc"><i>99</i>&nbsp;                log.info(&quot;COUNT IN TRANSACTION: {}&quot;,getCount());</b>
+<i>100</i>&nbsp;                //事务回滚
+<b class="nc"><i>101</i>&nbsp;                transactionStatus.setRollbackOnly();</b>
+<i>102</i>&nbsp;            }
+<i>103</i>&nbsp;        });
+<b class="nc"><i>104</i>&nbsp;        log.info(&quot;COUNT AFTER TRANSACTION: {}&quot;,getCount());</b>
+<i>105</i>&nbsp;    }
+<i>106</i>&nbsp;
+<i>107</i>&nbsp;    //count下,返回来FOO表中的数据条目
+<i>108</i>&nbsp;    private long getCount(){
+<b class="nc"><i>109</i>&nbsp;        return (long) jdbcTemplate.queryForList(&quot;SELECT COUNT(*) AS CNT FROM FOO&quot;)</b>
+<b class="nc"><i>110</i>&nbsp;                .get(0).get(&quot;CNT&quot;);</b>
+<i>111</i>&nbsp;    }
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

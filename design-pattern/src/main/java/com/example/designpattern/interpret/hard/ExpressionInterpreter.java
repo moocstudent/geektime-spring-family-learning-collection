@@ -10,7 +10,7 @@ import java.util.List;
  * @Date: 2021-02-10 12:26
  */
 public class ExpressionInterpreter {
-    private Deque<Expression> numbers = new LinkedList<>();
+    private final Deque<Expression> numbers = new LinkedList<>();
 
     public long interpret(String expression){
         String[] elements = expression.split(" ");
@@ -29,13 +29,13 @@ public class ExpressionInterpreter {
             Expression exp1 = numbers.pollFirst();
             Expression exp2 = numbers.pollFirst();
             Expression combindExp = null;
-            if(operator.equals("+")){
+            if("+".equals(operator)){
                 combindExp = new AdditionExpression(exp1,exp2);
-            }else if(operator.equals("-")){
+            }else if("-".equals(operator)){
                 combindExp = new SubstractionExpression(exp1,exp2);
-            }else if(operator.equals("*")){
+            }else if("*".equals(operator)){
                 combindExp = new MultiplicationExpression(exp1,exp2);
-            }else if(operator.equals("/")){
+            }else if("/".equals(operator)){
                 combindExp = new DivisionExpression(exp1,exp2);
             }
             long result = combindExp.interpret();

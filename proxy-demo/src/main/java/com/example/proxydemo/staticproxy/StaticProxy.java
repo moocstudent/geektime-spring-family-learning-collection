@@ -8,7 +8,7 @@ import com.example.proxydemo.subject.Subject;
  */
 public class StaticProxy implements Subject {
     //实际目标对象
-    private Subject subject;
+    private final Subject subject;
 
     public StaticProxy(Subject subject){
         this.subject = subject;
@@ -21,8 +21,4 @@ public class StaticProxy implements Subject {
         System.out.println("PostProcess");
     }
 
-    @Override
-    public void response() {
-
-    }
 }

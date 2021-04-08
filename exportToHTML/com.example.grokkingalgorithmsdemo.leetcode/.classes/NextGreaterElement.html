@@ -1,0 +1,165 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: NextGreaterElement</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.grokkingalgorithmsdemo.leetcode</a> ]
+</div>
+
+<h1>Coverage Summary for Class: NextGreaterElement (com.example.grokkingalgorithmsdemo.leetcode)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">NextGreaterElement</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 40)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.grokkingalgorithmsdemo.leetcode;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.Arrays;
+<i>4</i>&nbsp;import java.util.Deque;
+<i>5</i>&nbsp;import java.util.LinkedList;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * @Author: zhangQi
+<i>9</i>&nbsp; * @Date: 2021-03-07 12:59
+<i>10</i>&nbsp; * https://leetcode-cn.com/problems/next-greater-element-ii/
+<i>11</i>&nbsp; */
+<b class="nc"><i>12</i>&nbsp;public class NextGreaterElement {</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    public static int[] nextGreaterElements(int[] nums){
+<b class="nc"><i>15</i>&nbsp;        int n = nums.length;</b>
+<b class="nc"><i>16</i>&nbsp;        int[] ret = new int[n];</b>
+<b class="nc"><i>17</i>&nbsp;        Arrays.fill(ret,-1);</b>
+<i>18</i>&nbsp;        //ret被填充了-1
+<b class="nc"><i>19</i>&nbsp;        Arrays.stream(ret).forEach(System.out::println);</b>
+<b class="nc"><i>20</i>&nbsp;        Deque&lt;Integer&gt; stack = new LinkedList&lt;Integer&gt;();</b>
+<i>21</i>&nbsp;        //循环长度增至数组长度*2-1
+<b class="nc"><i>22</i>&nbsp;        for(int i=0;i&lt;n*2-1;i++){</b>
+<b class="nc"><i>23</i>&nbsp;            while(!stack.isEmpty() &amp;&amp; nums[stack.peek()] &lt;nums[i%n]){</b>
+<b class="nc"><i>24</i>&nbsp;                ret[stack.pop()] = nums[i%n];</b>
+<i>25</i>&nbsp;            }
+<b class="nc"><i>26</i>&nbsp;            stack.push(i%n);</b>
+<i>27</i>&nbsp;        }
+<b class="nc"><i>28</i>&nbsp;        return ret;</b>
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    public static int[] nextGreaterElements1(int[] nums) {
+<i>32</i>&nbsp;        //一个循环的数,即使上一个循环的数被更改,也是可以按序找到下一个更大的数
+<b class="nc"><i>33</i>&nbsp;        int[] intsNew = new int[nums.length];</b>
+<b class="nc"><i>34</i>&nbsp;        for (int i = 0; i &lt; nums.length; i++) {</b>
+<b class="nc"><i>35</i>&nbsp;            boolean change = false;</b>
+<b class="nc"><i>36</i>&nbsp;            for (int j = i+1; j &lt; nums.length + i; j++) {</b>
+<b class="nc"><i>37</i>&nbsp;                if (j &gt;= nums.length) {</b>
+<b class="nc"><i>38</i>&nbsp;                    if (nums[j - nums.length] &gt; nums[i]) {</b>
+<b class="nc"><i>39</i>&nbsp;                        if (!change) {</b>
+<b class="nc"><i>40</i>&nbsp;                            intsNew[i]= nums[j - nums.length];</b>
+<b class="nc"><i>41</i>&nbsp;                            intsNew[nums.length-1] = nums[j-nums.length];</b>
+<i>42</i>&nbsp;                        }
+<i>43</i>&nbsp;                    } else {
+<b class="nc"><i>44</i>&nbsp;                        intsNew[i]=-1;</b>
+<b class="nc"><i>45</i>&nbsp;                        intsNew[nums.length-1] = -1;</b>
+<i>46</i>&nbsp;                    }
+<i>47</i>&nbsp;                } else {
+<b class="nc"><i>48</i>&nbsp;                    if (nums[j] &gt; nums[i]) {</b>
+<b class="nc"><i>49</i>&nbsp;                        intsNew[i]= nums[j];</b>
+<i>50</i>&nbsp;                    }
+<i>51</i>&nbsp;                }
+<i>52</i>&nbsp;            }
+<i>53</i>&nbsp;        }
+<b class="nc"><i>54</i>&nbsp;        return intsNew;</b>
+<i>55</i>&nbsp;    }
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    public static int[] nextGreaterElementsBowen(int[] nums){
+<b class="nc"><i>58</i>&nbsp;        int n = nums.length;</b>
+<b class="nc"><i>59</i>&nbsp;        int[] ans = new int[n];</b>
+<b class="nc"><i>60</i>&nbsp;        Arrays.fill(ans,-1);</b>
+<b class="nc"><i>61</i>&nbsp;        int target = 0;</b>
+<b class="nc"><i>62</i>&nbsp;        for(int i=0; i&lt;n;i++){</b>
+<b class="nc"><i>63</i>&nbsp;            target = nums[i];</b>
+<b class="nc"><i>64</i>&nbsp;            for(int j=i+1;j&lt;n+i+1;j++){</b>
+<b class="nc"><i>65</i>&nbsp;                if(nums[j%n] &gt; target){</b>
+<b class="nc"><i>66</i>&nbsp;                    ans[i] = nums[j%n];</b>
+<b class="nc"><i>67</i>&nbsp;                    break;</b>
+<i>68</i>&nbsp;                }
+<i>69</i>&nbsp;            }
+<i>70</i>&nbsp;        }
+<b class="nc"><i>71</i>&nbsp;        return ans;</b>
+<i>72</i>&nbsp;    }
+<i>73</i>&nbsp;
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>76</i>&nbsp;        int[] ints = nextGreaterElements(new int[]{1, 2, 1});</b>
+<b class="nc"><i>77</i>&nbsp;        int[] intsBowen = nextGreaterElementsBowen(new int[]{1, 2, 1});</b>
+<b class="nc"><i>78</i>&nbsp;        Arrays.stream(intsBowen).forEach(System.out::println);</b>
+<b class="nc"><i>79</i>&nbsp;        System.out.println();</b>
+<i>80</i>&nbsp;//        Arrays.stream(ints).forEach(System.out::println);
+<i>81</i>&nbsp;    }
+<i>82</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

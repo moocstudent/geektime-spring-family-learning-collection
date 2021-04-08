@@ -22,7 +22,7 @@ public class Outer2 {
             final static int a = 1;
             //不允许定义静态普通类成员
             //static int b = 2;
-            String name = "ghi";
+            final String name = "ghi";
 
             public void f2(){
                 System.out.println(name);

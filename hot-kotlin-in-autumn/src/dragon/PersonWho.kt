@@ -7,10 +7,8 @@ package src.dragon
 class PersonWho {
     var lastName:String = "Zhang"
         get()=field.toUpperCase() //将变量赋值后转换为大写
-        set
 
     var no: Int = 100
-        get() = field // 后端变量
         set(value){
             if(value<10){
                 field = value //如果传入的值小于10 返回该值

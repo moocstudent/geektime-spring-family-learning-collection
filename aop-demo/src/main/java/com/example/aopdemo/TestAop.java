@@ -22,7 +22,7 @@ public class TestAop {
         Person action = new PersonImpl();
         ProxyHandler mh = new ProxyHandler(action);
         ClassLoader c1 = TestAop.class.getClassLoader();
-        Class<?> proxyClass = Proxy.getProxyClass(c1, new Class<?>[]{Person.class});
+        Class<?> proxyClass = Proxy.getProxyClass(c1, Person.class);
         Person proxy = (Person) proxyClass.getConstructor(new Class[]{InvocationHandler.class}).newInstance(new Object[]{mh});
 
 

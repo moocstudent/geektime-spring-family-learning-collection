@@ -10,15 +10,15 @@ package com.example.nestedclassdemo.outer4;
  * - 外界需要通过包围类才可以访问到静态嵌套类,并创建其对象,不需要外部包围类的实例
  */
 public class Outer4 {
-    private String outField1 = "outer 111";
-    private static String outStaticField2 = "outer static 222";
+    private final String outField1 = "outer 111";
+    private static final String outStaticField2 = "outer static 222";
 
     /**
      * 静态嵌套类
      */
     public static class Inner4{
         //静态嵌套类可以定义静态和非静态成员
-        private String innField1 = "inner 333";
+        private final String innField1 = "inner 333";
         static String innStaticField2 = "inner static 444";
 
         public void innFun1(){

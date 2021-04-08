@@ -25,7 +25,7 @@ public class DynamicProxyTest {
         //本次调用将自动被代理处理器的invoke方法接收
         proxySubject.request();
 
-        proxySubject.response();
+//        proxySubject.response();
 
         System.out.println(proxySubject.getClass().getName());
     }

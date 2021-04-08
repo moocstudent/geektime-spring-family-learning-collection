@@ -9,7 +9,7 @@ public class ShadowTest2 {
         int x = 20;
 
         class FirstLevel{
-            public int x = 1;
+            public final int x = 1;
 
             void methodInFirstLevel(int x){
                 System.out.println("x = "+x); //line 14 x

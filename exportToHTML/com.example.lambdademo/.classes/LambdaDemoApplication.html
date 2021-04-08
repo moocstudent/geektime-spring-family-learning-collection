@@ -1,0 +1,141 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LambdaDemoApplication</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.lambdademo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LambdaDemoApplication (com.example.lambdademo)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LambdaDemoApplication</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.lambdademo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.springframework.boot.SpringApplication;
+<i>4</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;/**
+<i>7</i>&nbsp; * Lambda表达式
+<i>8</i>&nbsp; * 面向过程程序语言:参数传递是基本类型的变量
+<i>9</i>&nbsp; * 面向对象语言
+<i>10</i>&nbsp; * - 传递基本类型的变量
+<i>11</i>&nbsp; * - 传递对象变量
+<i>12</i>&nbsp; * 传递方法/代码块(函数式程序语言设计)
+<i>13</i>&nbsp; * - 刚开始,Java为了简单性,一致性,拒绝此功能
+<i>14</i>&nbsp; * - 为了市场和技术的需要,Java8开始,支持此项功能,提出Java的Lambda表达式实现
+<i>15</i>&nbsp; *
+<i>16</i>&nbsp; * - 类似于匿名方法,一个没有名字的方法
+<i>17</i>&nbsp; * - 参数,箭头,表达式语句
+<i>18</i>&nbsp; * - 可以忽略写参数类型
+<i>19</i>&nbsp; * - 坚决不声明返回值类型
+<i>20</i>&nbsp; * - 没有public/protected/private/static/final等修饰符
+<i>21</i>&nbsp; * - 单句表达式,将直接返回值,不用大括号
+<i>22</i>&nbsp; * - 带return语句,算多句,必须用大括号
+<i>23</i>&nbsp; *
+<i>24</i>&nbsp; * - 如果有返回值,返回值类型会在上下文推断出来的,无需声明
+<i>25</i>&nbsp; * - 只在某几个分支有返回值,这样是不合法的
+<i>26</i>&nbsp; *
+<i>27</i>&nbsp; * 函数式接口
+<i>28</i>&nbsp; * - 是一个接口,符合java接口的定义
+<i>29</i>&nbsp; * - 只包含一个抽象方法的接口
+<i>30</i>&nbsp; * - 可以包括其他的default方法,static方法,private方法
+<i>31</i>&nbsp; * - 由于只有一个未实现的方法,所以Lambda表达式可以自动填上这个尚未实现的方法
+<i>32</i>&nbsp; * - 采用Lambda表达式,可以自动创建出一个(伪)嵌套类的对象(没有实际的嵌套类class文件产生),
+<i>33</i>&nbsp; * 然后使用,比真正嵌套类更加轻量,更加简洁高效
+<i>34</i>&nbsp; *
+<i>35</i>&nbsp; * - 只带有一个未实现的方法,内容简单
+<i>36</i>&nbsp; * - 大量重复性的函数式接口,使得源码膨胀
+<i>37</i>&nbsp; * 系统自带的函数式接口
+<i>38</i>&nbsp; * - 涵盖大部分常用的功能,可以重复使用
+<i>39</i>&nbsp; * - 位于java.util.function包中
+<i>40</i>&nbsp; *
+<i>41</i>&nbsp; * 系统自带的函数式接口(部分常用)
+<i>42</i>&nbsp; * Predicate&lt;T&gt; 返回值Boolean
+<i>43</i>&nbsp; * Consumer&lt;T&gt; 返回值void
+<i>44</i>&nbsp; * Function&lt;T,R&gt; 返回值R
+<i>45</i>&nbsp; * Supplier&lt;T&gt; 返回值T
+<i>46</i>&nbsp; *
+<i>47</i>&nbsp; *
+<i>48</i>&nbsp; *
+<i>49</i>&nbsp; *
+<i>50</i>&nbsp; */
+<i>51</i>&nbsp;@SpringBootApplication
+<b class="nc"><i>52</i>&nbsp;public class LambdaDemoApplication {</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>55</i>&nbsp;        SpringApplication.run(LambdaDemoApplication.class, args);</b>
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

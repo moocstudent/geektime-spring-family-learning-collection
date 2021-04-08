@@ -13,9 +13,9 @@ fun checkNull() {
     //throw exception
     val ages = age!!.toInt()
     //return null
-    val ages1 = age?.toInt()
+    val ages1 = age.toInt()
     //if age is null return -1
-    val ages2 = age?.toInt() ?: -1
+    val ages2 = age.toInt()
 
     println(age)
     println(ages)

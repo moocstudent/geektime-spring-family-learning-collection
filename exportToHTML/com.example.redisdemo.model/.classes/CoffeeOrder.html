@@ -1,0 +1,134 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CoffeeOrder</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.redisdemo.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CoffeeOrder (com.example.redisdemo.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CoffeeOrder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">CoffeeOrder$CoffeeOrderBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.redisdemo.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import lombok.*;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import javax.persistence.*;
+<i>6</i>&nbsp;import java.io.Serializable;
+<i>7</i>&nbsp;import java.util.List;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;@Entity
+<i>10</i>&nbsp;@Table(name = &quot;T_ORDER&quot;)
+<b class="nc"><i>11</i>&nbsp;@Data</b>
+<b class="nc"><i>12</i>&nbsp;@ToString(callSuper = true)</b>
+<b class="nc"><i>13</i>&nbsp;@NoArgsConstructor</b>
+<b class="nc"><i>14</i>&nbsp;@AllArgsConstructor</b>
+<b class="nc"><i>15</i>&nbsp;@Builder</b>
+<i>16</i>&nbsp;public class CoffeeOrder extends BaseEntity implements Serializable {
+<b class="nc"><i>17</i>&nbsp;    private String customer;</b>
+<i>18</i>&nbsp;    @ManyToMany
+<i>19</i>&nbsp;    @JoinTable(name = &quot;T_ORDER_COFFEE&quot;)
+<i>20</i>&nbsp;    @OrderBy(&quot;id&quot;)
+<b class="nc"><i>21</i>&nbsp;    private List&lt;Coffee&gt; items;</b>
+<i>22</i>&nbsp;    @Enumerated
+<i>23</i>&nbsp;    @Column(nullable = false)
+<b class="nc"><i>24</i>&nbsp;    private OrderState state;</b>
+<i>25</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>
