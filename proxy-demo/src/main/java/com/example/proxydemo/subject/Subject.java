@@ -8,4 +8,6 @@ public interface Subject {
 
     void request();
 
+    Integer submit(Process process);
+
 }

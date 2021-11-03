@@ -1,0 +1,113 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ProxyHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.proxydemo.multiple</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ProxyHandler (com.example.proxydemo.multiple)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProxyHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.proxydemo.multiple;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.lang.reflect.InvocationHandler;
+<i>4</i>&nbsp;import java.lang.reflect.Method;
+<i>5</i>&nbsp;import java.util.Arrays;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * 代理类的调用处理器
+<i>9</i>&nbsp; */
+<i>10</i>&nbsp;public class ProxyHandler implements InvocationHandler {
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    private final Cook cook;
+<i>13</i>&nbsp;
+<b class="nc"><i>14</i>&nbsp;    public ProxyHandler(Cook cook){</b>
+<b class="nc"><i>15</i>&nbsp;        this.cook = cook;</b>
+<i>16</i>&nbsp;    }
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    //此函数在代理对象调用任何一个方法时都会被调用
+<i>19</i>&nbsp;    @Override
+<i>20</i>&nbsp;    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+<b class="nc"><i>21</i>&nbsp;        System.out.println(&quot;proxy类型:&quot;+proxy.getClass().getName());</b>
+<b class="nc"><i>22</i>&nbsp;        System.out.println(&quot;调用方法:&quot;+method+&quot;:参数为:&quot;+Arrays.deepToString(args));</b>
+<b class="nc"><i>23</i>&nbsp;        Object result = method.invoke(getCook(), args);</b>
+<b class="nc"><i>24</i>&nbsp;        return result;</b>
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    public Cook getCook() {
+<b class="nc"><i>28</i>&nbsp;        return cook;</b>
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CoffeeOrder</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.springbucksdemo.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CoffeeOrder (com.example.springbucksdemo.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CoffeeOrder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">CoffeeOrder$CoffeeOrderBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.springbucksdemo.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import lombok.*;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import javax.persistence.*;
+<i>6</i>&nbsp;import java.io.Serializable;
+<i>7</i>&nbsp;import java.util.Date;
+<i>8</i>&nbsp;import java.util.List;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;/**
+<i>11</i>&nbsp; * @Entity标注用于实体类声明语句之前，指出该Java 类为实体类，将映射到指定的数据库表。
+<i>12</i>&nbsp; * 如声明一个实体类 CoffeeOrder，它将映射到数据库中的 @Table指定的名称表上 T_ORDER
+<i>13</i>&nbsp; */
+<i>14</i>&nbsp;@Entity
+<b class="nc"><i>15</i>&nbsp;@Data</b>
+<b class="nc"><i>16</i>&nbsp;@Builder</b>
+<b class="nc"><i>17</i>&nbsp;@ToString(callSuper = true)</b>
+<b class="nc"><i>18</i>&nbsp;@NoArgsConstructor</b>
+<b class="nc"><i>19</i>&nbsp;@AllArgsConstructor</b>
+<i>20</i>&nbsp;@Table(name=&quot;T_ORDER&quot;)
+<i>21</i>&nbsp;public class CoffeeOrder extends BaseEntity implements Serializable {
+<i>22</i>&nbsp;
+<b class="nc"><i>23</i>&nbsp;    private String customer;</b>
+<i>24</i>&nbsp;    /**
+<i>25</i>&nbsp;     * 咖啡跟订单的关系 多对多
+<i>26</i>&nbsp;     */
+<i>27</i>&nbsp;    @ManyToMany
+<i>28</i>&nbsp;    @JoinTable(name=&quot;T_ORDER_COFFEE&quot;)
+<b class="nc"><i>29</i>&nbsp;    private List&lt;Coffee&gt; items;</b>
+<i>30</i>&nbsp;    //不能为空值
+<i>31</i>&nbsp;    @Column(nullable = false)
+<b class="nc"><i>32</i>&nbsp;    private OrderState state;</b>
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

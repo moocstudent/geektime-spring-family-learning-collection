@@ -1,0 +1,186 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Outer2</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.nestedclassdemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Outer2 (com.example.nestedclassdemo)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Outer2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Outer2$1Inner2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Outer2$2Inner2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 18)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.nestedclassdemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.io.Serializable;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;/**
+<i>6</i>&nbsp; * 局部内部类: Local classes
+<i>7</i>&nbsp; * - 编译后名称: 外部类名+$+序号+内部类名
+<i>8</i>&nbsp; * - 可以继承其他类,或者实现其他接口
+<i>9</i>&nbsp; * - 非静态的类,不能包含静态成员(变量和方法),除了常量
+<i>10</i>&nbsp; * - 可以访问外部包围类的成员
+<i>11</i>&nbsp; * - 如果定义在静态方法中,只能访问包围类的静态成员
+<i>12</i>&nbsp; * - 局部内部类不能是一个接口,即接口不能定义在代码块中
+<i>13</i>&nbsp; */
+<b class="nc"><i>14</i>&nbsp;public class Outer2 {</b>
+<b class="nc"><i>15</i>&nbsp;    String name = &quot;abc&quot;;</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    //局部内部类
+<i>18</i>&nbsp;    public void f1(){
+<b class="nc"><i>19</i>&nbsp;        String name = &quot;def&quot;;</b>
+<i>20</i>&nbsp;
+<b class="nc"><i>21</i>&nbsp;        class Inner2 extends Outer1 implements Runnable, Serializable {</b>
+<i>22</i>&nbsp;            final static int a = 1;
+<i>23</i>&nbsp;            //不允许定义静态普通类成员
+<i>24</i>&nbsp;            //static int b = 2;
+<b class="nc"><i>25</i>&nbsp;            final String name = &quot;ghi&quot;;</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;            public void f2(){
+<b class="nc"><i>28</i>&nbsp;                System.out.println(name);</b>
+<b class="nc"><i>29</i>&nbsp;                System.out.println(Outer2.this.name);</b>
+<i>30</i>&nbsp;            }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;            @Override
+<i>33</i>&nbsp;            public void run() {
+<b class="nc"><i>34</i>&nbsp;                System.out.println(name);</b>
+<i>35</i>&nbsp;            }
+<i>36</i>&nbsp;        }
+<i>37</i>&nbsp;
+<b class="nc"><i>38</i>&nbsp;        Inner2 obj1 = new Inner2();</b>
+<b class="nc"><i>39</i>&nbsp;        obj1.f2();</b>
+<b class="nc"><i>40</i>&nbsp;        System.out.println(obj1.getClass().getName());</b>
+<i>41</i>&nbsp;    }
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    //局部内部类
+<i>44</i>&nbsp;    public static void f2(){
+<b class="nc"><i>45</i>&nbsp;        final String name = &quot;def&quot;;</b>
+<i>46</i>&nbsp;
+<b class="nc"><i>47</i>&nbsp;        class Inner2{</b>
+<i>48</i>&nbsp;            public String f2(){
+<b class="nc"><i>49</i>&nbsp;                return &quot;this is f2()&quot;;</b>
+<i>50</i>&nbsp;            }
+<i>51</i>&nbsp;        }
+<i>52</i>&nbsp;
+<b class="nc"><i>53</i>&nbsp;        Inner2 inner2 = new Inner2();</b>
+<b class="nc"><i>54</i>&nbsp;        String s = inner2.f2();</b>
+<b class="nc"><i>55</i>&nbsp;        System.out.println(s);</b>
+<b class="nc"><i>56</i>&nbsp;        System.out.println(inner2.getClass().getName());</b>
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

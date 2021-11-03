@@ -1,0 +1,159 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ObserverDemoApplication</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.observerdemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ObserverDemoApplication (com.example.observerdemo)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ObserverDemoApplication</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.observerdemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.observerdemo.model.Coffee;
+<i>4</i>&nbsp;import com.example.observerdemo.model.CoffeeOrder;
+<i>5</i>&nbsp;import com.example.observerdemo.service.CoffeeService;
+<i>6</i>&nbsp;import com.example.observerdemo.service.OrderService;
+<i>7</i>&nbsp;import io.reactivex.Single;
+<i>8</i>&nbsp;import io.reactivex.disposables.Disposable;
+<i>9</i>&nbsp;import lombok.extern.slf4j.Slf4j;
+<i>10</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>11</i>&nbsp;import org.springframework.boot.ApplicationArguments;
+<i>12</i>&nbsp;import org.springframework.boot.ApplicationRunner;
+<i>13</i>&nbsp;import org.springframework.boot.SpringApplication;
+<i>14</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+<i>15</i>&nbsp;import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;/**
+<i>18</i>&nbsp; * rx2-vertx的demo在vertx-example中
+<i>19</i>&nbsp; */
+<i>20</i>&nbsp;@SpringBootApplication
+<i>21</i>&nbsp;@EnableJpaRepositories
+<b class="nc"><i>22</i>&nbsp;@Slf4j</b>
+<b class="nc"><i>23</i>&nbsp;public class ObserverDemoApplication implements ApplicationRunner {</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    public static final String CUSTOMER = &quot;ZhangQi&quot;;
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>29</i>&nbsp;        SpringApplication.run(ObserverDemoApplication.class, args);</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    @Autowired
+<i>33</i>&nbsp;    private CoffeeService coffeeService;
+<i>34</i>&nbsp;    @Autowired
+<i>35</i>&nbsp;    private OrderService orderService;
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    @Override
+<i>38</i>&nbsp;    public void run(ApplicationArguments args) throws Exception {
+<b class="nc"><i>39</i>&nbsp;        coffeeSingleTest();</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    /**
+<i>43</i>&nbsp;     * 创建一个coffee
+<i>44</i>&nbsp;     * 之后将该coffee id创建到订单中
+<i>45</i>&nbsp;     */
+<i>46</i>&nbsp;   Single&lt;Coffee&gt; coffeeSingleTest() {
+<i>47</i>&nbsp;//       System.out.println(&quot;coffeeSingleTest&quot;);
+<b class="nc"><i>48</i>&nbsp;       Single&lt;Coffee&gt; latte = coffeeService.testAddCoffee(new Coffee(1, &quot;Latte&quot;));</b>
+<b class="nc"><i>49</i>&nbsp;       System.out.println(latte);</b>
+<b class="nc"><i>50</i>&nbsp;       Single&lt;Long&gt; coffeeOrder = orderService.create(createOrder(CUSTOMER, 1L));</b>
+<b class="nc"><i>51</i>&nbsp;       System.out.println(coffeeOrder);</b>
+<b class="nc"><i>52</i>&nbsp;       return latte;</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;//                   latte
+<i>55</i>&nbsp;//                           .doOnSuccess(s -&gt; log.info(&quot;add coffee ok code:{}&quot;, s))
+<i>56</i>&nbsp;//                           .doOnError(t -&gt; log.error(&quot;error&quot;, t))
+<i>57</i>&nbsp;//                           .flatMap(c -&gt; {
+<i>58</i>&nbsp;//                               CoffeeOrder order = createOrder(&quot;ZhangQi&quot;, c);
+<i>59</i>&nbsp;//                               return orderService.create(order);
+<i>60</i>&nbsp;//                           })
+<i>61</i>&nbsp;//                           .doOnSuccess(s -&gt; log.info(&quot;add coffeeOrder ok code:{}&quot;, s))
+<i>62</i>&nbsp;//                           .doOnError(t -&gt; log.error(&quot;error&quot;, t))
+<i>63</i>&nbsp;//                           .subscribe(o -&gt; log.info(&quot;create coffeeOrder:{}&quot;, o));
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;//       );
+<i>66</i>&nbsp;    }
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;    private CoffeeOrder createOrder(String customer, long coffee) {
+<b class="nc"><i>70</i>&nbsp;        return CoffeeOrder.builder()</b>
+<b class="nc"><i>71</i>&nbsp;                .customer(customer)</b>
+<b class="nc"><i>72</i>&nbsp;                .item(coffee)</b>
+<b class="nc"><i>73</i>&nbsp;                .build();</b>
+<i>74</i>&nbsp;    }
+<i>75</i>&nbsp;
+<i>76</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

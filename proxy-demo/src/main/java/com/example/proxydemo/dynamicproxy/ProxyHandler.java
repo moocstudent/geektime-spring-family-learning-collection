@@ -27,11 +27,13 @@ public class ProxyHandler implements InvocationHandler {
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
         System.out.println(proxy.getClass().getName());
         //定义预处理的工作,当然你也可以根据method的不同进行不同的预处理工作
         System.out.println("====before====");
-        Object result = method.invoke(subject, args);
         System.out.println("====after====");
+        Object result = method.invoke(subject, args);
+        System.out.println("result:"+result);
         return result;
     }
 }

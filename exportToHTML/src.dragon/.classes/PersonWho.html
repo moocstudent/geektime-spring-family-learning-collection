@@ -1,0 +1,118 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PersonWho</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">src.dragon</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PersonWho (src.dragon)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PersonWho</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package src.dragon
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * @Author: zhangQi
+<i>5</i>&nbsp; * @Date: 2020-11-02 10:00
+<i>6</i>&nbsp; */
+<b class="nc"><i>7</i>&nbsp;class PersonWho {</b>
+<b class="nc"><i>8</i>&nbsp;    var lastName:String = &quot;Zhang&quot;</b>
+<b class="nc"><i>9</i>&nbsp;        get()=field.toUpperCase() //将变量赋值后转换为大写</b>
+<i>10</i>&nbsp;
+<b class="nc"><i>11</i>&nbsp;    var no: Int = 100</b>
+<i>12</i>&nbsp;        set(value){
+<b class="nc"><i>13</i>&nbsp;            if(value&lt;10){</b>
+<b class="nc"><i>14</i>&nbsp;                field = value //如果传入的值小于10 返回该值</b>
+<i>15</i>&nbsp;            }else{
+<b class="nc"><i>16</i>&nbsp;                field = -1 //如果传入的值大于等于10 返回-1</b>
+<b class="nc"><i>17</i>&nbsp;            }</b>
+<i>18</i>&nbsp;        }
+<i>19</i>&nbsp;
+<b class="nc"><i>20</i>&nbsp;    var heiht: Float = 145.4f</b>
+<i>21</i>&nbsp;        private set
+<i>22</i>&nbsp;}
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;fun main(args: Array&lt;String&gt;){
+<i>25</i>&nbsp;    var who: PersonWho = PersonWho()
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    who.lastName = &quot;C&quot;
+<i>28</i>&nbsp;    println(&quot;lastName:${who.lastName}&quot;)
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    who.no = 7
+<i>31</i>&nbsp;    println(&quot;no:${who.no}&quot;)
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    who.no = 20
+<i>34</i>&nbsp;    println(&quot;no:${who.no}&quot;)
+<i>35</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

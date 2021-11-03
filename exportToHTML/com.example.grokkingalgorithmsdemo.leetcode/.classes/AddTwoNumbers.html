@@ -1,0 +1,176 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AddTwoNumbers</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.grokkingalgorithmsdemo.leetcode</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AddTwoNumbers (com.example.grokkingalgorithmsdemo.leetcode)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AddTwoNumbers</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 34)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.grokkingalgorithmsdemo.leetcode;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.math.BigDecimal;
+<i>4</i>&nbsp;import java.util.ArrayList;
+<i>5</i>&nbsp;import java.util.List;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * @Author: zhangQi
+<i>9</i>&nbsp; * @Date: 2021-03-05 15:33
+<i>10</i>&nbsp; * 由于输入的两个链表都是逆序存储数字的位数的,因此两个链表中同一个位置数字可以直接相加.
+<i>11</i>&nbsp; * 我们同时遍历两个链表,逐位计算它们的和,并与当前位置的进位值相加.
+<i>12</i>&nbsp; * 具体而言,如果当前两个链表处相应位置的数字为n1,n2,进位值为carry,则它们的和为n1+n2+carry;
+<i>13</i>&nbsp; * 其中,答案链表处相应位置的数字为(n1+n2+carry)%10,而新的进位值为(n1+n2+ccarry)/10
+<i>14</i>&nbsp; * 如果两个链表的长度不同,则可认为长度短的链表的后面有若干个0.
+<i>15</i>&nbsp; * 此外,如果链表遍历结束后,有carry&gt;0,还需要在答案链表的后面附加一个节点,节点的值为carry.
+<i>16</i>&nbsp; */
+<b class="nc"><i>17</i>&nbsp;public class AddTwoNumbers {</b>
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public ListNode addTwoNumbers1(ListNode l1,ListNode l2){
+<b class="nc"><i>20</i>&nbsp;        return null;</b>
+<i>21</i>&nbsp;    }
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+<b class="nc"><i>24</i>&nbsp;        String resultStr = &quot;&quot;;</b>
+<b class="nc"><i>25</i>&nbsp;        String resultStr2 = &quot;&quot;;</b>
+<b class="nc"><i>26</i>&nbsp;        resultStr = l1.val + &quot;&quot;;</b>
+<b class="nc"><i>27</i>&nbsp;        resultStr += ListListNode(l1);</b>
+<b class="nc"><i>28</i>&nbsp;        this.resultStr = &quot;&quot;;</b>
+<b class="nc"><i>29</i>&nbsp;        resultStr2 = l2.val + &quot;&quot;;</b>
+<b class="nc"><i>30</i>&nbsp;        resultStr2 += ListListNode(l2);</b>
+<b class="nc"><i>31</i>&nbsp;        String norm = new StringBuilder(resultStr).reverse().toString();</b>
+<b class="nc"><i>32</i>&nbsp;        String norm2 = new StringBuilder(resultStr2).reverse().toString();</b>
+<i>33</i>&nbsp;
+<b class="nc"><i>34</i>&nbsp;        BigDecimal n1 = new BigDecimal(norm);</b>
+<b class="nc"><i>35</i>&nbsp;        BigDecimal n2 = new BigDecimal(norm2);</b>
+<b class="nc"><i>36</i>&nbsp;        BigDecimal now = n1.add(n2);</b>
+<b class="nc"><i>37</i>&nbsp;        String nowReverse = new StringBuilder(now + &quot;&quot;).reverse().toString();</b>
+<i>38</i>&nbsp;
+<b class="nc"><i>39</i>&nbsp;        String[] split = (nowReverse).split(&quot;&quot;);</b>
+<b class="nc"><i>40</i>&nbsp;        List&lt;ListNode&gt; listNodeList = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>41</i>&nbsp;        for (int i = 0; i &lt; split.length; i++) {</b>
+<b class="nc"><i>42</i>&nbsp;            ListNode listNode = setListNode(Integer.parseInt(split[i]));</b>
+<b class="nc"><i>43</i>&nbsp;            listNodeList.add(listNode);</b>
+<i>44</i>&nbsp;        }
+<b class="nc"><i>45</i>&nbsp;        for (int i=0;i&lt;listNodeList.size()-1;i++){</b>
+<b class="nc"><i>46</i>&nbsp;            if(listNodeList.get(i)!=null || listNodeList.get(i+1)!=null){</b>
+<b class="nc"><i>47</i>&nbsp;                listNodeList.get(i).next = listNodeList.get(i+1);</b>
+<i>48</i>&nbsp;            }
+<i>49</i>&nbsp;        }
+<b class="nc"><i>50</i>&nbsp;        return listNodeList.get(0);</b>
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;
+<b class="nc"><i>53</i>&nbsp;    String resultStr = &quot;&quot;;</b>
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;    private String ListListNode(ListNode l1) {
+<b class="nc"><i>56</i>&nbsp;        if (l1.next != null) {</b>
+<b class="nc"><i>57</i>&nbsp;            resultStr += l1.next.val;</b>
+<b class="nc"><i>58</i>&nbsp;            return ListListNode(l1.next);</b>
+<i>59</i>&nbsp;        }
+<b class="nc"><i>60</i>&nbsp;        return resultStr;</b>
+<i>61</i>&nbsp;    }
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    private ListNode setListNode(Integer nm) {
+<b class="nc"><i>64</i>&nbsp;        return new ListNode(nm);</b>
+<i>65</i>&nbsp;    }
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>68</i>&nbsp;        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));</b>
+<b class="nc"><i>69</i>&nbsp;        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));</b>
+<b class="nc"><i>70</i>&nbsp;        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();</b>
+<b class="nc"><i>71</i>&nbsp;        ListNode listNode = addTwoNumbers.addTwoNumbers(l1, l2);</b>
+<i>72</i>&nbsp;    }
+<i>73</i>&nbsp;}
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;
+<i>76</i>&nbsp;
+<i>77</i>&nbsp;class ListNode {
+<i>78</i>&nbsp;    int val;
+<i>79</i>&nbsp;    ListNode next;
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;    ListNode() {
+<i>82</i>&nbsp;    }
+<i>83</i>&nbsp;
+<i>84</i>&nbsp;    ListNode(int val) {
+<i>85</i>&nbsp;        this.val = val;
+<i>86</i>&nbsp;    }
+<i>87</i>&nbsp;
+<i>88</i>&nbsp;    ListNode(int val, ListNode next) {
+<i>89</i>&nbsp;        this.val = val;
+<i>90</i>&nbsp;        this.next = next;
+<i>91</i>&nbsp;    }
+<i>92</i>&nbsp;}
+<i>93</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

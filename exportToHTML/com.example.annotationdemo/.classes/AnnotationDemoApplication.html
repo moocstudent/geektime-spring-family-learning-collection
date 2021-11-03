@@ -1,0 +1,181 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AnnotationDemoApplication</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.annotationdemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AnnotationDemoApplication (com.example.annotationdemo)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AnnotationDemoApplication</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.annotationdemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.springframework.boot.SpringApplication;
+<i>4</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;/**
+<i>7</i>&nbsp; * 注解:Annotation
+<i>8</i>&nbsp; * - 从JDK1.5引入
+<i>9</i>&nbsp; * - 位于源码中(代码/注释/注解),使用其他工具进行处理的标签
+<i>10</i>&nbsp; * - 注解用来修饰程序的元素,但不会对被修饰的对象有直接的影响
+<i>11</i>&nbsp; * - 只有通过某种配套的工具才会对注解信息进行访问和处理
+<i>12</i>&nbsp; * - 主要用途
+<i>13</i>&nbsp; *  - 提供信息给编译器/IDE工具
+<i>14</i>&nbsp; *  - 可用于其他工具来产生额外的代码/配置文件等
+<i>15</i>&nbsp; *  - 有一些注解可在程序运行时访问,增加程序的动态性
+<i>16</i>&nbsp; *
+<i>17</i>&nbsp; * @Override 表示继承和覆写 自带注解
+<i>18</i>&nbsp; * @Deprecated 表示废弃 自带注解
+<i>19</i>&nbsp; * @SuppressWarnings 表示压制警告 自带注解
+<i>20</i>&nbsp; * @SafeVarargs 不会对不定项参数做危险操作 自带注解
+<i>21</i>&nbsp; * @FunctionInterface 声明功能性接口 自带注解
+<i>22</i>&nbsp; *
+<i>23</i>&nbsp; * JDK预定义的元注解(部分) 修饰注解的注解
+<i>24</i>&nbsp; * @Target 设置目标范围 元注解 限定注解可以作用的位置
+<i>25</i>&nbsp; * @Retention 设置保持性 元注解
+<i>26</i>&nbsp; * @Documented 文档 元注解
+<i>27</i>&nbsp; * @Inherited 注解继承 元注解
+<i>28</i>&nbsp; * @Repeatable 此注解可以重复修饰 元注解
+<i>29</i>&nbsp; *
+<i>30</i>&nbsp; * 注解使用位置除了@Target限定位置
+<i>31</i>&nbsp; * 其他允许的位置有
+<i>32</i>&nbsp; * - 包
+<i>33</i>&nbsp; * - 类
+<i>34</i>&nbsp; * - 接口
+<i>35</i>&nbsp; * - 方法
+<i>36</i>&nbsp; * - 构造器
+<i>37</i>&nbsp; * - 成员变量
+<i>38</i>&nbsp; * - 局部变量/形参变量/类型参数
+<i>39</i>&nbsp; *
+<i>40</i>&nbsp; * @Retention 这个注解用来修饰其他注解的存在范围
+<i>41</i>&nbsp; * RetentionPolicy.SOURCE 注解仅存在源码,不在class文件,也不会被JVM加载
+<i>42</i>&nbsp; * 只有在源码级别进行注解处理
+<i>43</i>&nbsp; * Java提供注解处理器来解析带注解的源码,产生新的文件
+<i>44</i>&nbsp; *
+<i>45</i>&nbsp; * RetentionPolicy.CLASS 这是默认的注解保留策略,注解存在于.class文件,但是不能被JVM加载
+<i>46</i>&nbsp; * 只能采用字节码工具进行特殊处理 如ASM工具,https://asm.ow2.io/
+<i>47</i>&nbsp; *
+<i>48</i>&nbsp; *
+<i>49</i>&nbsp; * RetentionPolicy.RUNTIME 这种策略下,注解可以被JVM运行时访问到.通常,可以结合反射来做一些事情
+<i>50</i>&nbsp; *
+<i>51</i>&nbsp; * @Target 限定目标注解作用于什么位置
+<i>52</i>&nbsp; * ElementType.ANNOTATION_TYPE (修饰注解)
+<i>53</i>&nbsp; * ElementType.CONSTRUCTOR
+<i>54</i>&nbsp; * ElementType.FIELD
+<i>55</i>&nbsp; * ElementType.LOCAL_VARIABLE
+<i>56</i>&nbsp; * ElementType.METHOD
+<i>57</i>&nbsp; * ElementType.PACKAGE
+<i>58</i>&nbsp; * ElementType.PARAMETER
+<i>59</i>&nbsp; * ElementType.TYPE (任何类型,即上面的类型都可以修饰)
+<i>60</i>&nbsp; *
+<i>61</i>&nbsp; * @Inherited 让一个类和它的子类都包含某个注解
+<i>62</i>&nbsp; *
+<i>63</i>&nbsp; * @Repeatable 从JDK1.8引入 表示被修饰的注解可以重复应用标注
+<i>64</i>&nbsp; * 需要定义注解和容器注解
+<i>65</i>&nbsp; *
+<i>66</i>&nbsp; * @Documented 指明这个注解可以被Javadoc工具解析,形成帮助文档
+<i>67</i>&nbsp; *
+<i>68</i>&nbsp; * 反射解析注解:
+<i>69</i>&nbsp; * Class.getAnnotations()
+<i>70</i>&nbsp; * Class.isAnnotation()
+<i>71</i>&nbsp; * Class.isAnnotationPresent(Class annotationClass)
+<i>72</i>&nbsp; * Method.getAnnotations()
+<i>73</i>&nbsp; * Method.isAnnotationPresent(Class annotationClass)
+<i>74</i>&nbsp; * Field.getAnnotations()
+<i>75</i>&nbsp; * Field.isAnnotationPresent(Class annotationClass)
+<i>76</i>&nbsp; * Constructor.getAnnotations()
+<i>77</i>&nbsp; * Constructor.isAnnotationPresent(Class annotationClass)
+<i>78</i>&nbsp; *
+<i>79</i>&nbsp; * RUNTIME注解的设计思路
+<i>80</i>&nbsp; * 传统的接口中的变量,都是public final static
+<i>81</i>&nbsp; * 注解需要随意赋值
+<i>82</i>&nbsp; *  - 注解方法表示变量
+<i>83</i>&nbsp; *  - 采用代理类拦截注解方法访问
+<i>84</i>&nbsp; *  - 所有的注解的赋值,都放在Map中,访问速度快
+<i>85</i>&nbsp; *
+<i>86</i>&nbsp; *  注解已成为很多框架的标配
+<i>87</i>&nbsp; *  需要了解注解的用法,更要理解它的原理
+<i>88</i>&nbsp; *  不要滥用,特别是大团队使用多个框架/第三方库的兼容协调
+<i>89</i>&nbsp; *  要注意第三方软件升级所带来的注解差异
+<i>90</i>&nbsp; */
+<i>91</i>&nbsp;@SpringBootApplication
+<b class="nc"><i>92</i>&nbsp;public class AnnotationDemoApplication {</b>
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>95</i>&nbsp;        SpringApplication.run(AnnotationDemoApplication.class, args);</b>
+<i>96</i>&nbsp;    }
+<i>97</i>&nbsp;
+<i>98</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

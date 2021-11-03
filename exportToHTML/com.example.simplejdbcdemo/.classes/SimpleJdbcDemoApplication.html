@@ -1,0 +1,165 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SimpleJdbcDemoApplication</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.simplejdbcdemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SimpleJdbcDemoApplication (com.example.simplejdbcdemo)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SimpleJdbcDemoApplication</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SimpleJdbcDemoApplication$$EnhancerBySpringCGLIB$$d36765f2</td>
+  </tr>
+  <tr>
+    <td class="name">SimpleJdbcDemoApplication$$EnhancerBySpringCGLIB$$d36765f2$$FastClassBySpringCGLIB$$e1dbee41</td>
+  </tr>
+  <tr>
+    <td class="name">SimpleJdbcDemoApplication$$FastClassBySpringCGLIB$$86150733</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.simplejdbcdemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.simplejdbcdemo.dao.BatchFooDao;
+<i>4</i>&nbsp;import com.example.simplejdbcdemo.dao.FooDao;
+<i>5</i>&nbsp;import lombok.extern.slf4j.Slf4j;
+<i>6</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>7</i>&nbsp;import org.springframework.boot.CommandLineRunner;
+<i>8</i>&nbsp;import org.springframework.boot.SpringApplication;
+<i>9</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+<i>10</i>&nbsp;import org.springframework.context.annotation.Bean;
+<i>11</i>&nbsp;import org.springframework.jdbc.core.JdbcTemplate;
+<i>12</i>&nbsp;import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+<i>13</i>&nbsp;import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;import javax.sql.DataSource;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;/**
+<i>18</i>&nbsp; * 通过注解定义Bean
+<i>19</i>&nbsp; * @Component
+<i>20</i>&nbsp; * @Repository
+<i>21</i>&nbsp; * @Service
+<i>22</i>&nbsp; * @Controller
+<i>23</i>&nbsp; * @RestController
+<i>24</i>&nbsp; *
+<i>25</i>&nbsp; * SQL批处理
+<i>26</i>&nbsp; * JdbcTemplate
+<i>27</i>&nbsp; * -batchUpdate
+<i>28</i>&nbsp; * -BatchPreparedStatementSetter
+<i>29</i>&nbsp; * NamedParameterJdbcTemplate
+<i>30</i>&nbsp; * -batchUpdate
+<i>31</i>&nbsp; * -SqlParameterSourceUtils.createBatch
+<i>32</i>&nbsp; */
+<i>33</i>&nbsp;@SpringBootApplication
+<b class="fc"><i>34</i>&nbsp;@Slf4j</b>
+<b class="fc"><i>35</i>&nbsp;public class SimpleJdbcDemoApplication implements CommandLineRunner {</b>
+<i>36</i>&nbsp;    @Autowired
+<i>37</i>&nbsp;    private FooDao fooDao;
+<i>38</i>&nbsp;    @Autowired
+<i>39</i>&nbsp;    private BatchFooDao batchFooDao;
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    public static void main(String[] args) {
+<b class="fc"><i>42</i>&nbsp;        SpringApplication.run(SimpleJdbcDemoApplication.class, args);</b>
+<b class="fc"><i>43</i>&nbsp;    }</b>
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    @Bean
+<i>46</i>&nbsp;    @Autowired
+<i>47</i>&nbsp;    public SimpleJdbcInsert simpleJdbcInsert(JdbcTemplate jdbcTemplate){
+<b class="fc"><i>48</i>&nbsp;        return new SimpleJdbcInsert(jdbcTemplate)</b>
+<b class="fc"><i>49</i>&nbsp;                .withTableName(&quot;FOO&quot;).usingGeneratedKeyColumns(&quot;ID&quot;);</b>
+<i>50</i>&nbsp;    }
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    @Bean
+<i>53</i>&nbsp;    @Autowired
+<i>54</i>&nbsp;    public NamedParameterJdbcTemplate namedParameterJdbcTemplate(DataSource dataSource){
+<b class="fc"><i>55</i>&nbsp;        return new NamedParameterJdbcTemplate(dataSource);</b>
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    @Override
+<i>59</i>&nbsp;    public void run(String... args) throws Exception {
+<i>60</i>&nbsp;        //单个
+<i>61</i>&nbsp;//        fooDao.insertData();
+<i>62</i>&nbsp;        //批量
+<b class="fc"><i>63</i>&nbsp;        batchFooDao.batchInsert();</b>
+<b class="fc"><i>64</i>&nbsp;        fooDao.listData();</b>
+<b class="fc"><i>65</i>&nbsp;    }</b>
+<i>66</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

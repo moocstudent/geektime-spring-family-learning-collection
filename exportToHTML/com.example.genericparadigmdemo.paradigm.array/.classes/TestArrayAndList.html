@@ -1,0 +1,126 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TestArrayAndList</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.genericparadigmdemo.paradigm.array</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TestArrayAndList (com.example.genericparadigmdemo.paradigm.array)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TestArrayAndList</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;/*
+<i>2</i>&nbsp; * Copyright (c) 2021. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<i>3</i>&nbsp; * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+<i>4</i>&nbsp; * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+<i>5</i>&nbsp; * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+<i>6</i>&nbsp; * Vestibulum commodo. Ut rhoncus gravida arcu.
+<i>7</i>&nbsp; */
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;package com.example.genericparadigmdemo.paradigm.array;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import java.util.ArrayList;
+<i>12</i>&nbsp;import java.util.Collections;
+<i>13</i>&nbsp;
+<b class="nc"><i>14</i>&nbsp;public class TestArrayAndList {</b>
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    public static void main(String[] args) {
+<i>17</i>&nbsp;        /**
+<i>18</i>&nbsp;         * compile error
+<i>19</i>&nbsp;         * 需要Abut 声明传入B
+<i>20</i>&nbsp;         */
+<i>21</i>&nbsp;        //B[] r1 = test(new ArrayList&lt;B&gt;());
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;        /**
+<i>24</i>&nbsp;         * 尽管接受类型是A[] but传入还是B的,编译异常
+<i>25</i>&nbsp;         */
+<i>26</i>&nbsp;        //A[] r2 = test(new ArrayList&lt;B&gt;());
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;        /**
+<i>29</i>&nbsp;         * 如果test接受的是Object,则以上包括这个就不会
+<i>30</i>&nbsp;         * 编译异常了
+<i>31</i>&nbsp;         */
+<i>32</i>&nbsp;        //Object[] r3 = test(new ArrayList&lt;Object&gt;());
+<i>33</i>&nbsp;
+<b class="nc"><i>34</i>&nbsp;        A[] r4 = test(new ArrayList&lt;A&gt;());</b>
+<i>35</i>&nbsp;
+<b class="nc"><i>36</i>&nbsp;        Object[] r5 = test(new ArrayList&lt;A&gt;());</b>
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    public static A[] test(ArrayList&lt;A&gt; list){
+<b class="nc"><i>41</i>&nbsp;        return new A[1];</b>
+<i>42</i>&nbsp;    }
+<i>43</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

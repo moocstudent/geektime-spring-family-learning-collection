@@ -1,0 +1,124 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SessionServer</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.vertxsessiondemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SessionServer (com.example.vertxsessiondemo)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SessionServer</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.vertxsessiondemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import io.vertx.core.AbstractVerticle;
+<i>4</i>&nbsp;import io.vertx.ext.web.Router;
+<i>5</i>&nbsp;import io.vertx.ext.web.Session;
+<i>6</i>&nbsp;import io.vertx.ext.web.handler.CookieHandler;
+<i>7</i>&nbsp;import io.vertx.ext.web.handler.SessionHandler;
+<i>8</i>&nbsp;import io.vertx.ext.web.sstore.LocalSessionStore;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;/**
+<i>11</i>&nbsp; * @Author: zhangQi
+<i>12</i>&nbsp; * @Date: 2020-08-28 10:13
+<i>13</i>&nbsp; */
+<b class="nc"><i>14</i>&nbsp;public class SessionServer extends AbstractVerticle {</b>
+<i>15</i>&nbsp;    
+<i>16</i>&nbsp;    @Override
+<i>17</i>&nbsp;    public void start(){
+<b class="nc"><i>18</i>&nbsp;        Router router = Router.router(vertx);</b>
+<i>19</i>&nbsp;        //增加cookies处理器,解码cookies,并将其放到context上下文中
+<b class="nc"><i>20</i>&nbsp;        router.route().handler(CookieHandler.create());</b>
+<i>21</i>&nbsp;        //增加session处理器,为每次用户请求,维护一个唯一的session,这里使用内存session,后面会讲到分布式的session存储
+<b class="nc"><i>22</i>&nbsp;        router.route().handler(</b>
+<b class="nc"><i>23</i>&nbsp;                SessionHandler.create(LocalSessionStore.create(vertx)));</b>
+<b class="nc"><i>24</i>&nbsp;        router.route().handler(routingContext-&gt;{</b>
+<i>25</i>&nbsp;            //从请求上下文获取session
+<b class="nc"><i>26</i>&nbsp;            Session session = routingContext.session();</b>
+<b class="nc"><i>27</i>&nbsp;            Integer count = session.get(&quot;count&quot;);</b>
+<b class="nc"><i>28</i>&nbsp;            if(count==null){</b>
+<b class="nc"><i>29</i>&nbsp;                count = 0;</b>
+<i>30</i>&nbsp;            }
+<b class="nc"><i>31</i>&nbsp;            count++;</b>
+<b class="nc"><i>32</i>&nbsp;            session.put(&quot;count&quot;,count);</b>
+<i>33</i>&nbsp;
+<b class="nc"><i>34</i>&nbsp;            routingContext.response()</b>
+<b class="nc"><i>35</i>&nbsp;                    .putHeader(&quot;content-type&quot;,&quot;text/html&quot;)</b>
+<b class="nc"><i>36</i>&nbsp;                    .end(&quot;total visit count:&quot;+session.get(&quot;count&quot;));</b>
+<i>37</i>&nbsp;        });
+<i>38</i>&nbsp;        //开启verticle服务
+<b class="nc"><i>39</i>&nbsp;        vertx.createHttpServer().requestHandler(router::accept).listen(8080);</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

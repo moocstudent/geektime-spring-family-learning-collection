@@ -1,0 +1,112 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Runoob</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dragon</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Runoob (dragon)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Runoob</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dragon
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * @Author: zhangQi
+<i>5</i>&nbsp; * @Date: 2020-09-20 18:12
+<i>6</i>&nbsp; * Kotlin类可以包含: 构造函数和初始化代码块,函数,属性,内部类,对象声明
+<i>7</i>&nbsp; * Kotlin中使用关键字 class 声明类, 后面紧跟类名
+<i>8</i>&nbsp; */
+<b class="nc"><i>9</i>&nbsp;class Runoob constructor(name:String){</b>
+<b class="nc"><i>10</i>&nbsp;    var url: String = &quot;https://deadzq.github.io&quot;</b>
+<b class="nc"><i>11</i>&nbsp;    var country: String = &quot;CN&quot;</b>
+<b class="nc"><i>12</i>&nbsp;    var siteName = name</b>
+<i>13</i>&nbsp;
+<b class="nc"><i>14</i>&nbsp;    init{</b>
+<b class="nc"><i>15</i>&nbsp;        println(&quot;initialize site name is : ${name}&quot;)</b>
+<i>16</i>&nbsp;    }
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    fun printTest(){
+<b class="nc"><i>19</i>&nbsp;        println(&quot;我是类的函数&quot;)</b>
+<i>20</i>&nbsp;    }
+<i>21</i>&nbsp;}
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;fun main(args: Array&lt;String&gt;) {
+<i>24</i>&nbsp;    val runoob = Runoob(&quot;deadzq的算法网站&quot;)
+<i>25</i>&nbsp;    println(runoob.siteName)
+<i>26</i>&nbsp;    println(runoob.url)
+<i>27</i>&nbsp;    println(runoob.country)
+<i>28</i>&nbsp;    runoob.printTest()
+<i>29</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

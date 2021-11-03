@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CityRepository</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.webfluxrestfuldemo.dao</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CityRepository (com.example.webfluxrestfuldemo.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CityRepository</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.webfluxrestfuldemo.dao;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.webfluxrestfuldemo.domain.City;
+<i>4</i>&nbsp;import org.springframework.stereotype.Repository;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.util.Collection;
+<i>7</i>&nbsp;import java.util.concurrent.ConcurrentHashMap;
+<i>8</i>&nbsp;import java.util.concurrent.ConcurrentMap;
+<i>9</i>&nbsp;import java.util.concurrent.atomic.AtomicLong;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp; * @Author: zhangQi
+<i>13</i>&nbsp; * @Date: 2020-08-09 14:03
+<i>14</i>&nbsp; */
+<i>15</i>&nbsp;@Repository
+<b class="nc"><i>16</i>&nbsp;public class CityRepository {</b>
+<b class="nc"><i>17</i>&nbsp;    private final ConcurrentMap&lt;Long, City&gt; repository = new ConcurrentHashMap&lt;&gt;();</b>
+<i>18</i>&nbsp;
+<b class="nc"><i>19</i>&nbsp;    private static final AtomicLong idGenerator = new AtomicLong(0);</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    public Long save(City city){
+<b class="nc"><i>22</i>&nbsp;        Long id = idGenerator.incrementAndGet();</b>
+<b class="nc"><i>23</i>&nbsp;        city.setId(id);</b>
+<b class="nc"><i>24</i>&nbsp;        repository.put(id,city);</b>
+<b class="nc"><i>25</i>&nbsp;        return id;</b>
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    public Collection&lt;City&gt; findAll(){
+<b class="nc"><i>29</i>&nbsp;        return repository.values();</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    public City findCityById(Long id){
+<b class="nc"><i>33</i>&nbsp;        return repository.get(id);</b>
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    public Long updateCity(City city){
+<b class="nc"><i>37</i>&nbsp;        repository.put(city.getId(),city);</b>
+<b class="nc"><i>38</i>&nbsp;        return city.getId();</b>
+<i>39</i>&nbsp;    }
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    public Long deleteCity(Long id){
+<b class="nc"><i>42</i>&nbsp;        repository.remove(id);</b>
+<b class="nc"><i>43</i>&nbsp;        return id;</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

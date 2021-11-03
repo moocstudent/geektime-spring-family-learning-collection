@@ -13,6 +13,7 @@ public class MultipleDemo {
 
     @MultipleTest
     public static void m2(int a,int b){
+        System.out.println("m2,a:"+a+",b:"+b);
         //全部采用默认值
         if(a+b<0){
             throw new RuntimeException("Broken");

@@ -1,0 +1,217 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SpringBucksDemoApplication</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.springbucksdemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SpringBucksDemoApplication (com.example.springbucksdemo)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SpringBucksDemoApplication</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 48)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.springbucksdemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.springbucksdemo.model.Coffee;
+<i>4</i>&nbsp;import com.example.springbucksdemo.model.CoffeeOrder;
+<i>5</i>&nbsp;import com.example.springbucksdemo.model.OrderState;
+<i>6</i>&nbsp;import com.example.springbucksdemo.repository.CoffeeOrderRepository;
+<i>7</i>&nbsp;import com.example.springbucksdemo.repository.CoffeeRepository;
+<i>8</i>&nbsp;import org.joda.money.CurrencyUnit;
+<i>9</i>&nbsp;import org.joda.money.Money;
+<i>10</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>11</i>&nbsp;import org.springframework.boot.ApplicationArguments;
+<i>12</i>&nbsp;import org.springframework.boot.ApplicationRunner;
+<i>13</i>&nbsp;import org.springframework.boot.SpringApplication;
+<i>14</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+<i>15</i>&nbsp;import org.springframework.data.domain.Sort;
+<i>16</i>&nbsp;import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+<i>17</i>&nbsp;import org.springframework.transaction.annotation.EnableTransactionManagement;
+<i>18</i>&nbsp;import org.springframework.transaction.annotation.Transactional;
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;import java.util.Arrays;
+<i>21</i>&nbsp;import java.util.Collections;
+<i>22</i>&nbsp;import java.util.List;
+<i>23</i>&nbsp;import java.util.stream.Collectors;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;/**
+<i>26</i>&nbsp; * lesson 18
+<i>27</i>&nbsp; * Repository
+<i>28</i>&nbsp; * @EnableJpaRepositories (帮我自动发现CurdRepository等这样的接口的扩展)
+<i>29</i>&nbsp; *
+<i>30</i>&nbsp; * 定义查询
+<i>31</i>&nbsp; * 根据方法名定义查询
+<i>32</i>&nbsp; * find...By... / read...By... / query...By / get...By...
+<i>33</i>&nbsp; * count...By...
+<i>34</i>&nbsp; * ...OrderBy... [Asc / Desc]
+<i>35</i>&nbsp; * And / Or / IgnoreCase
+<i>36</i>&nbsp; * Top / First / Distinct
+<i>37</i>&nbsp; *
+<i>38</i>&nbsp; * 分页查询
+<i>39</i>&nbsp; * PagingAndSortingRepository&lt;T,ID&gt;
+<i>40</i>&nbsp; *   Pageable/Sort
+<i>41</i>&nbsp; *   Slice&lt;T&gt;/Page&lt;T&gt;
+<i>42</i>&nbsp; *
+<i>43</i>&nbsp; *
+<i>44</i>&nbsp; */
+<i>45</i>&nbsp;@SpringBootApplication
+<i>46</i>&nbsp;@EnableJpaRepositories
+<i>47</i>&nbsp;@EnableTransactionManagement
+<b class="nc"><i>48</i>&nbsp;public class SpringBucksDemoApplication implements ApplicationRunner {</b>
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    @Autowired
+<i>51</i>&nbsp;    private CoffeeRepository coffeeRepository;
+<i>52</i>&nbsp;    @Autowired
+<i>53</i>&nbsp;    private CoffeeOrderRepository orderRepository;
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>56</i>&nbsp;        SpringApplication.run(SpringBucksDemoApplication.class, args);</b>
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;    @Override
+<i>60</i>&nbsp;    @Transactional
+<i>61</i>&nbsp;    public void run(ApplicationArguments args) throws Exception {
+<b class="nc"><i>62</i>&nbsp;        initOrders();</b>
+<b class="nc"><i>63</i>&nbsp;        findOrders();</b>
+<i>64</i>&nbsp;    }
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;    private void initOrders(){
+<b class="nc"><i>67</i>&nbsp;        Coffee latte = Coffee.builder().name(&quot;latte&quot;)</b>
+<b class="nc"><i>68</i>&nbsp;                .price(Money.of(CurrencyUnit.of(&quot;CNY&quot;), 30.0)).build();</b>
+<b class="nc"><i>69</i>&nbsp;        Coffee save = coffeeRepository.save(latte);</b>
+<b class="nc"><i>70</i>&nbsp;        if(save!=null){</b>
+<b class="nc"><i>71</i>&nbsp;            System.out.println(&quot;Coffee:&quot;+latte);</b>
+<i>72</i>&nbsp;        }else{
+<b class="nc"><i>73</i>&nbsp;            System.out.println(&quot;Coffee not saved&quot;);</b>
+<i>74</i>&nbsp;        }
+<i>75</i>&nbsp;
+<b class="nc"><i>76</i>&nbsp;        Coffee espresso = Coffee.builder()</b>
+<b class="nc"><i>77</i>&nbsp;                .name(&quot;espresso&quot;)</b>
+<b class="nc"><i>78</i>&nbsp;                .price(Money.of(CurrencyUnit.of(&quot;CNY&quot;), 20.0))</b>
+<b class="nc"><i>79</i>&nbsp;                .build();</b>
+<b class="nc"><i>80</i>&nbsp;        Coffee save1 = coffeeRepository.save(espresso);</b>
+<b class="nc"><i>81</i>&nbsp;        if(save1!=null){</b>
+<b class="nc"><i>82</i>&nbsp;            System.out.println(&quot;Coffee:&quot;+espresso);</b>
+<i>83</i>&nbsp;        }else{
+<b class="nc"><i>84</i>&nbsp;            System.out.println(&quot;Coffee not saved&quot;);</b>
+<i>85</i>&nbsp;        }
+<i>86</i>&nbsp;
+<b class="nc"><i>87</i>&nbsp;        CoffeeOrder order = CoffeeOrder.builder()</b>
+<b class="nc"><i>88</i>&nbsp;                .customer(&quot;ZhangQi&quot;)</b>
+<b class="nc"><i>89</i>&nbsp;                .items(Collections.singletonList(espresso))</b>
+<b class="nc"><i>90</i>&nbsp;                .state(OrderState.INIT)</b>
+<b class="nc"><i>91</i>&nbsp;                .build();</b>
+<b class="nc"><i>92</i>&nbsp;        CoffeeOrder orderSave = orderRepository.save(order);</b>
+<b class="nc"><i>93</i>&nbsp;        System.out.println(&quot;Order:&quot;+order);</b>
+<i>94</i>&nbsp;
+<b class="nc"><i>95</i>&nbsp;        order = CoffeeOrder.builder()</b>
+<b class="nc"><i>96</i>&nbsp;                .customer(&quot;JunJun&quot;)</b>
+<b class="nc"><i>97</i>&nbsp;                .items(Arrays.asList(espresso, latte))</b>
+<b class="nc"><i>98</i>&nbsp;                .state(OrderState.INIT)</b>
+<b class="nc"><i>99</i>&nbsp;                .build();</b>
+<b class="nc"><i>100</i>&nbsp;        orderRepository.save(order);</b>
+<b class="nc"><i>101</i>&nbsp;        System.out.println(&quot;Order1:&quot;+order);</b>
+<i>102</i>&nbsp;    }
+<i>103</i>&nbsp;
+<i>104</i>&nbsp;    private void findOrders(){
+<b class="nc"><i>105</i>&nbsp;        coffeeRepository</b>
+<b class="nc"><i>106</i>&nbsp;                .findAll(Sort.by(Sort.Direction.DESC, &quot;id&quot;))</b>
+<b class="nc"><i>107</i>&nbsp;                .forEach(c-&gt; System.out.println(&quot;Loading&quot;+c));</b>
+<b class="nc"><i>108</i>&nbsp;        List&lt;CoffeeOrder&gt; list = orderRepository.findTop3ByOrderByUpdateTimeDescIdAsc();</b>
+<b class="nc"><i>109</i>&nbsp;        System.out.println(&quot;findTop3ByOrder...&quot;+getJoinedOrderId(list));</b>
+<i>110</i>&nbsp;
+<b class="nc"><i>111</i>&nbsp;        list = orderRepository.findByCustomerOrderById(&quot;ZhangQi&quot;);</b>
+<b class="nc"><i>112</i>&nbsp;        System.out.println(&quot;findByCustomerOrder.ZQ..&quot;+getJoinedOrderId(list));</b>
+<b class="nc"><i>113</i>&nbsp;        list = orderRepository.findByCustomerOrderById(&quot;JunJun&quot;);</b>
+<b class="nc"><i>114</i>&nbsp;        System.out.println(&quot;findByCustomerOrder.JunJun..&quot;+getJoinedOrderId(list));</b>
+<i>115</i>&nbsp;
+<b class="nc"><i>116</i>&nbsp;        list.forEach(o-&gt;{</b>
+<b class="nc"><i>117</i>&nbsp;            System.out.println(&quot;Order:&quot;+o.getId());</b>
+<b class="nc"><i>118</i>&nbsp;            o.getItems().forEach(i-&gt; System.out.println(&quot;Item:&quot;+i));</b>
+<i>119</i>&nbsp;        });
+<i>120</i>&nbsp;
+<b class="nc"><i>121</i>&nbsp;        list = orderRepository.findByItems_Name(&quot;latte&quot;);</b>
+<b class="nc"><i>122</i>&nbsp;        System.out.println(&quot;findByItems.Name:&quot;+getJoinedOrderId(list));</b>
+<i>123</i>&nbsp;    }
+<i>124</i>&nbsp;
+<i>125</i>&nbsp;    /**
+<i>126</i>&nbsp;     * 转换list获取id加入join形成1,2,3
+<i>127</i>&nbsp;     * @param list
+<i>128</i>&nbsp;     * @return
+<i>129</i>&nbsp;     */
+<i>130</i>&nbsp;    private String getJoinedOrderId(List&lt;CoffeeOrder&gt; list){
+<b class="nc"><i>131</i>&nbsp;        return list.stream().map(o-&gt;o.getId().toString())</b>
+<b class="nc"><i>132</i>&nbsp;                .collect(Collectors.joining(&quot;,&quot;));</b>
+<i>133</i>&nbsp;    }
+<i>134</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

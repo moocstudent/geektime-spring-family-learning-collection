@@ -1,0 +1,131 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DragonKt</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dragon</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DragonKt (dragon)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DragonKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dragon
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import src.dragon.DTest
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;/**
+<i>6</i>&nbsp; * @Author: zhangQi
+<i>7</i>&nbsp; * @Date: 2020-09-20 18:01
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;class Dragon {
+<i>10</i>&nbsp;    lateinit var dtest: DTest
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    fun setup(){
+<i>13</i>&nbsp;        dtest = DTest()
+<i>14</i>&nbsp;    }
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    fun test(){
+<i>17</i>&nbsp;        dtest.test()
+<i>18</i>&nbsp;    }
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    var lastName: String = &quot;Zhang&quot;
+<i>21</i>&nbsp;        get() = field.toUpperCase()
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    var no: Int = 100
+<i>24</i>&nbsp;        set(value) {
+<i>25</i>&nbsp;            if (value &lt; 10) {
+<i>26</i>&nbsp;                field = value
+<i>27</i>&nbsp;            } else {
+<i>28</i>&nbsp;                field = -1
+<i>29</i>&nbsp;            }
+<i>30</i>&nbsp;        }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    var heiht: Double = 10000.10
+<i>33</i>&nbsp;}
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;fun main(args: Array&lt;String&gt;) {
+<b class="nc"><i>36</i>&nbsp;    var dragon: Dragon = Dragon()</b>
+<i>37</i>&nbsp;
+<b class="nc"><i>38</i>&nbsp;    dragon.lastName = &quot;SayHello&quot;</b>
+<b class="nc"><i>39</i>&nbsp;    println(&quot;lastName:${dragon.lastName}&quot;)</b>
+<i>40</i>&nbsp;
+<b class="nc"><i>41</i>&nbsp;    dragon.no = 3</b>
+<b class="nc"><i>42</i>&nbsp;    println(&quot;no:${dragon.no}&quot;)</b>
+<i>43</i>&nbsp;
+<b class="nc"><i>44</i>&nbsp;    dragon.heiht = 29992.123</b>
+<b class="nc"><i>45</i>&nbsp;    println(&quot;heiht:${dragon.heiht}&quot;)</b>
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

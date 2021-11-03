@@ -1,5 +1,6 @@
 package com.example.proxydemo.staticproxy;
 
+import com.example.proxydemo.subject.Process;
 import com.example.proxydemo.subject.Subject;
 
 /**
@@ -19,6 +20,11 @@ public class StaticProxy implements Subject {
         System.out.println("PreProcess");
         subject.request();
         System.out.println("PostProcess");
+    }
+
+    @Override
+    public Integer submit(Process process) {
+        return null;
     }
 
 }

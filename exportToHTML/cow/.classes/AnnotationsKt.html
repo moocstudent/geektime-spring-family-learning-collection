@@ -1,0 +1,132 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AnnotationsKt</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">cow</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AnnotationsKt (cow)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AnnotationsKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">AnnotationsKt$singleAnnotation$hello$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package cow
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * @Author: zhangQi
+<i>5</i>&nbsp; * @Date: 2020-08-29 22:56
+<i>6</i>&nbsp; */
+<i>7</i>&nbsp;//just like java
+<i>8</i>&nbsp;fun singleAnnotation(){
+<i>9</i>&nbsp;    //single annotation
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    /*val hello:(String) -&gt; Unit = {x-&gt;x+&quot; ~~~&quot;}
+<i>12</i>&nbsp;    * the block annotation,it can be log kotlin.Unit */
+<b class="nc"><i>13</i>&nbsp;    val hello:(String) -&gt; String = {x-&gt;x+&quot; ~~~&quot;}</b>
+<b class="nc"><i>14</i>&nbsp;    print(hello(&quot;ÄãºÃÑ½&quot;))</b>
+<i>15</i>&nbsp;}
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;fun main(){
+<b class="nc"><i>18</i>&nbsp;    singleAnnotation()</b>
+<i>19</i>&nbsp;    //single annotation,sysout: the variables &quot;ÄãºÃÑ½ ~~~&quot;from lambda val
+<i>20</i>&nbsp;}
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

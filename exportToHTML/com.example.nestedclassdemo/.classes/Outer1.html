@@ -1,0 +1,174 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Outer1</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.nestedclassdemo</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Outer1 (com.example.nestedclassdemo)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Outer1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Outer1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Outer1$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 14)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.nestedclassdemo;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * 匿名内部类
+<i>5</i>&nbsp; * - 没有正式类名的内部类
+<i>6</i>&nbsp; *  - 编译器产生内部名字: 类名+$+数字编号
+<i>7</i>&nbsp; * - 没有类名,没有构造函数,能用父类/父接口的构造函数(可带参数)
+<i>8</i>&nbsp; * - 可以继承,改写,补充父类/父接口的方法
+<i>9</i>&nbsp; * - 内部不可以新定义静态成员(变量+方法),常量除外
+<i>10</i>&nbsp; *  - final static int a = 5;
+<i>11</i>&nbsp; * - 可以访问外部包围类的成员变量和方法(包括private)
+<i>12</i>&nbsp; * - 如果定义在静态方法中,也只能访问外部包围类的静态成员
+<i>13</i>&nbsp; * - 没有类名,外部包围类和其他类也无法访问到匿名内部类
+<i>14</i>&nbsp; */
+<b class="nc"><i>15</i>&nbsp;public class Outer1 {</b>
+<b class="nc"><i>16</i>&nbsp;    private final String name = &quot;abc&quot;;</b>
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    public void f1(){
+<b class="nc"><i>19</i>&nbsp;        String name = &quot;def&quot;;</b>
+<i>20</i>&nbsp;
+<b class="nc"><i>21</i>&nbsp;        Runnable r = new Runnable() {</b>
+<i>22</i>&nbsp;            //匿名内部类不能定义静态变量,除非是常量
+<i>23</i>&nbsp;            public final static int a = 5;
+<i>24</i>&nbsp;            //public static int b = 3;
+<b class="nc"><i>25</i>&nbsp;            final String name = &quot;ghi&quot;;</b>
+<i>26</i>&nbsp;            @Override
+<i>27</i>&nbsp;            public void run() {
+<b class="nc"><i>28</i>&nbsp;                System.out.println(&quot;hello &quot;+name);</b>
+<i>29</i>&nbsp;            }
+<i>30</i>&nbsp;            //静态方法不能在匿名内部类定义
+<i>31</i>&nbsp;            //public static void f2(){}
+<i>32</i>&nbsp;        };
+<b class="nc"><i>33</i>&nbsp;        new Thread(r).start();</b>
+<b class="nc"><i>34</i>&nbsp;        System.out.println(r.getClass().getName());</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;        //编译后会产生第二个class匿名内部类
+<b class="nc"><i>37</i>&nbsp;        Runnable r2 = new Runnable() {</b>
+<i>38</i>&nbsp;            @Override
+<i>39</i>&nbsp;            public void run() {
+<b class="nc"><i>40</i>&nbsp;                System.out.println(&quot;hello &quot;+Outer1.this.name);</b>
+<i>41</i>&nbsp;            }
+<i>42</i>&nbsp;        };
+<b class="nc"><i>43</i>&nbsp;        new Thread(r2).start();</b>
+<b class="nc"><i>44</i>&nbsp;        System.out.println(r2.getClass().getName());</b>
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

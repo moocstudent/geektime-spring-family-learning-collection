@@ -1,0 +1,123 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SelectionSortKKt</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.grokkingalgorithmsdemo.selectionsort</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SelectionSortKKt (com.example.grokkingalgorithmsdemo.selectionsort)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SelectionSortKKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.grokkingalgorithmsdemo.selectionsort
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * @Author: zhangQi
+<i>5</i>&nbsp; * @Date: 2021-03-03 15:41
+<i>6</i>&nbsp; * —°‘Ò≈≈–Úø€¡’∞Ê±æ
+<i>7</i>&nbsp; */
+<i>8</i>&nbsp;class SelectionSortK {
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    fun ArrayList&lt;Int&gt;.selectionSort():ArrayList&lt;Int&gt;{
+<i>11</i>&nbsp;        val sortedArray = arrayListOf&lt;Int&gt;()
+<i>12</i>&nbsp;        for(i in 0 until size){
+<i>13</i>&nbsp;            val smallest = getSmallest()
+<i>14</i>&nbsp;            sortedArray += this[smallest]
+<i>15</i>&nbsp;            removeAt(smallest)
+<i>16</i>&nbsp;        }
+<i>17</i>&nbsp;        return sortedArray
+<i>18</i>&nbsp;    }
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    fun ArrayList&lt;Int&gt;.getSmallest():Int{
+<i>21</i>&nbsp;        var smallest = this[0]
+<i>22</i>&nbsp;        var index = 0
+<i>23</i>&nbsp;        for(i in 1 until size) if(this[i] &lt;smallest){
+<i>24</i>&nbsp;            smallest = this[i]
+<i>25</i>&nbsp;            index = i
+<i>26</i>&nbsp;        }
+<i>27</i>&nbsp;        return index
+<i>28</i>&nbsp;    }
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    fun test(){
+<i>31</i>&nbsp;        val array = arrayListOf(0,2,5,1,8,23,31,21,93,213,31,11,1512,231,341,516,132,322,421,643)
+<i>32</i>&nbsp;        print(&quot;sort:${array.selectionSort()}&quot;)
+<i>33</i>&nbsp;    }
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;}
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;fun main(args: Array&lt;String&gt;) {
+<b class="nc"><i>38</i>&nbsp;    val selectionSortK = SelectionSortK()</b>
+<b class="nc"><i>39</i>&nbsp;    selectionSortK.test()</b>
+<i>40</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

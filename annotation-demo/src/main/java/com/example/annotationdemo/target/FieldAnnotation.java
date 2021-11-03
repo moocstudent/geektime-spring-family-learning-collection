@@ -8,4 +8,5 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.FIELD)
 public @interface FieldAnnotation {
+    int a() default 0;
 }

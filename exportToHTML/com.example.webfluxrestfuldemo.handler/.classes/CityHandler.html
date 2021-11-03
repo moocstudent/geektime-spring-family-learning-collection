@@ -1,0 +1,122 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CityHandler</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.webfluxrestfuldemo.handler</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CityHandler (com.example.webfluxrestfuldemo.handler)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CityHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.webfluxrestfuldemo.handler;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.webfluxrestfuldemo.dao.CityRepository;
+<i>4</i>&nbsp;import com.example.webfluxrestfuldemo.domain.City;
+<i>5</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>6</i>&nbsp;import org.springframework.stereotype.Component;
+<i>7</i>&nbsp;import reactor.core.publisher.Flux;
+<i>8</i>&nbsp;import reactor.core.publisher.Mono;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;@Component
+<i>11</i>&nbsp;public class CityHandler {
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    private final CityRepository cityRepository;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    @Autowired
+<b class="nc"><i>16</i>&nbsp;    public CityHandler(CityRepository cityRepository) {</b>
+<b class="nc"><i>17</i>&nbsp;        this.cityRepository = cityRepository;</b>
+<i>18</i>&nbsp;    }
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    public Mono&lt;Long&gt; save(City city) {
+<b class="nc"><i>21</i>&nbsp;        return Mono.create(cityMonoSink -&gt; cityMonoSink.success(cityRepository.save(city)));</b>
+<i>22</i>&nbsp;    }
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    public Mono&lt;City&gt; findCityById(Long id) {
+<b class="nc"><i>25</i>&nbsp;        return Mono.justOrEmpty(cityRepository.findCityById(id));</b>
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    public Flux&lt;City&gt; findAllCity() {
+<b class="nc"><i>29</i>&nbsp;        return Flux.fromIterable(cityRepository.findAll());</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    public Mono&lt;Long&gt; modifyCity(City city) {
+<b class="nc"><i>33</i>&nbsp;        return Mono.create(cityMonoSink -&gt; cityMonoSink.success(cityRepository.updateCity(city)));</b>
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    public Mono&lt;Long&gt; deleteCity(Long id) {
+<b class="nc"><i>37</i>&nbsp;        return Mono.create(cityMonoSink -&gt; cityMonoSink.success(cityRepository.deleteCity(id)));</b>
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

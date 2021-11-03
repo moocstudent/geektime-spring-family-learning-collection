@@ -1,0 +1,145 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CoffeeService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.mongodemo.service</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CoffeeService (com.example.mongodemo.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CoffeeService</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.mongodemo.service;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.mongodemo.model.Coffee;
+<i>4</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>5</i>&nbsp;import org.springframework.data.mongodb.core.MongoTemplate;
+<i>6</i>&nbsp;import org.springframework.data.mongodb.core.query.Criteria;
+<i>7</i>&nbsp;import org.springframework.data.mongodb.core.query.Query;
+<i>8</i>&nbsp;import org.springframework.data.mongodb.core.query.Update;
+<i>9</i>&nbsp;import org.springframework.stereotype.Service;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import java.util.List;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;import static org.springframework.data.mongodb.core.query.Criteria.where;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;/**
+<i>16</i>&nbsp; * @Author: zhangQi
+<i>17</i>&nbsp; * @Date: 2020-08-19 23:25
+<i>18</i>&nbsp; */
+<i>19</i>&nbsp;@Service
+<b class="nc"><i>20</i>&nbsp;public class CoffeeService {</b>
+<i>21</i>&nbsp;    @Autowired
+<i>22</i>&nbsp;    private MongoTemplate mongoTemplate;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    /**
+<i>25</i>&nbsp;     * 保存咖啡
+<i>26</i>&nbsp;     * @param coffee
+<i>27</i>&nbsp;     * @return
+<i>28</i>&nbsp;     */
+<i>29</i>&nbsp;    public int addCoffee(Coffee coffee) {
+<b class="nc"><i>30</i>&nbsp;        Coffee save = mongoTemplate.save(coffee);</b>
+<b class="nc"><i>31</i>&nbsp;        if (save != null) {</b>
+<b class="nc"><i>32</i>&nbsp;            return 1;</b>
+<i>33</i>&nbsp;        } else {
+<b class="nc"><i>34</i>&nbsp;            return 0;</b>
+<i>35</i>&nbsp;        }
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    /**
+<i>39</i>&nbsp;     * 查找coffee根据name
+<i>40</i>&nbsp;     * @param name
+<i>41</i>&nbsp;     * @return
+<i>42</i>&nbsp;     */
+<i>43</i>&nbsp;    public List&lt;Coffee&gt; findCoffeeByName(String name){
+<b class="nc"><i>44</i>&nbsp;        List&lt;Coffee&gt; coffees = mongoTemplate.find(Query.query(where(&quot;name&quot;).is(name)), Coffee.class);</b>
+<b class="nc"><i>45</i>&nbsp;        return coffees;</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    /**
+<i>49</i>&nbsp;     * todo 测试 mongo获取数据
+<i>50</i>&nbsp;     * @param cid
+<i>51</i>&nbsp;     * @return
+<i>52</i>&nbsp;     */
+<i>53</i>&nbsp;    public List&lt;Coffee&gt; findCoffeeById(String cid){
+<b class="nc"><i>54</i>&nbsp;        List&lt;Coffee&gt; coffee = mongoTemplate.find(Query.query(where(&quot;cid&quot;).is(cid)), Coffee.class);</b>
+<b class="nc"><i>55</i>&nbsp;        return coffee;</b>
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;//    public int updateByName(Coffee coffee,String field){
+<i>59</i>&nbsp;//        mongoTemplate.updateFirst(Query.query(where(&quot;name&quot;).is(coffee.getName())),
+<i>60</i>&nbsp;//                new Update().set(field),)
+<i>61</i>&nbsp;//    }
+<i>62</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>

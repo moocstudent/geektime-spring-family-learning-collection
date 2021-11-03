@@ -1,0 +1,112 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: RetentionTestMain</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.annotationdemo.retention</a> ]
+</div>
+
+<h1>Coverage Summary for Class: RetentionTestMain (com.example.annotationdemo.retention)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RetentionTestMain</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.annotationdemo.retention;
+<i>2</i>&nbsp;
+<b class="nc"><i>3</i>&nbsp;public class RetentionTestMain {</b>
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;    public static void main(String[] args) throws Exception{
+<i>6</i>&nbsp;        //RetentionPolicy.SOURCE
+<i>7</i>&nbsp;        //注解不会保存到class文件
+<i>8</i>&nbsp;        //这种注解一般是提供给IDE环境做源码的质量分析和监控的
+<b class="nc"><i>9</i>&nbsp;        Class a1 = Class.forName(&quot;com.example.annotationdemo.retention.A1&quot;);</b>
+<b class="nc"><i>10</i>&nbsp;        Class a2 = Class.forName(&quot;com.example.annotationdemo.retention.A2&quot;);</b>
+<b class="nc"><i>11</i>&nbsp;        System.out.println(a1.getAnnotations().length);</b>
+<b class="nc"><i>12</i>&nbsp;        System.out.println(a2.getAnnotations().length);</b>
+<b class="nc"><i>13</i>&nbsp;        System.out.println(&quot;==========================&quot;);</b>
+<i>14</i>&nbsp;        //RetentionPolicy.CLASS
+<i>15</i>&nbsp;        //注解会保存到class文件中,但是不会被JVM加载
+<b class="nc"><i>16</i>&nbsp;        Class b1 = Class.forName(&quot;com.example.annotationdemo.retention.B1&quot;);</b>
+<b class="nc"><i>17</i>&nbsp;        Class b2 = Class.forName(&quot;com.example.annotationdemo.retention.B2&quot;);</b>
+<b class="nc"><i>18</i>&nbsp;        System.out.println(b1.getAnnotations().length);</b>
+<b class="nc"><i>19</i>&nbsp;        System.out.println(b2.getAnnotations().length);</b>
+<b class="nc"><i>20</i>&nbsp;        System.out.println(&quot;==========================&quot;);</b>
+<i>21</i>&nbsp;        //RetentionPolicy.RUNTIME
+<i>22</i>&nbsp;        //注解会保存在class文件中,且会被JVM加载,反射识别
+<b class="nc"><i>23</i>&nbsp;        Class c1 = Class.forName(&quot;com.example.annotationdemo.retention.C1&quot;);</b>
+<b class="nc"><i>24</i>&nbsp;        Class c2 = Class.forName(&quot;com.example.annotationdemo.retention.C2&quot;);</b>
+<b class="nc"><i>25</i>&nbsp;        System.out.println(c1.getAnnotations().length);</b>
+<b class="nc"><i>26</i>&nbsp;        System.out.println(c2.getAnnotations().length);</b>
+<b class="nc"><i>27</i>&nbsp;        System.out.println(&quot;==========================&quot;);</b>
+<i>28</i>&nbsp;    }
+<i>29</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-03-31 14:05</div>
+</div>
+</body>
+</html>
